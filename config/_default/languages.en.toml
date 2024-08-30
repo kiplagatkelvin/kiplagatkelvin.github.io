@@ -1,7 +1,7 @@
 languageCode = "en"
 languageName = "English"
 weight = 1
-title = "V1c70r_n00b"
+title = "Home"
 
 [params]
   displayName = "EN"
@@ -10,16 +10,22 @@ title = "V1c70r_n00b"
   dateFormat = "2 January 2006"
    logo = "img/logo.png"
    secondaryLogo = "img/secondary-logo.png"
-   description = "My awesome website"
-  # copyright = "Copy, _right?_ :thinking_face:"
+   description = "Welcome to the land of geeks"
+#   copyright = "Copy, _right?_ :thinking_face:"
 
-[author]
+ [author]
    name = "V1c70r_n00b"
-   image = "img/cover.png"
-   headline = "Headline here"
-   bio = "A little bit about you"
+   email = "victormaina2024@outlook.com"
+   image = "profile.png"
+   imageQuality = 96
+   headline = """What if changing the world was just about being here? By showing up no matter how many times we get told we don’t belong? By staying true even when we are shamed into being false? By believing in ourselves even when we are too different? And if we all held on to that, if we refuse to budge and fall in line. if we stood our ground for long enough, just maybe the world can’t help but change around us
+ 
+~ Elliot Alderson~"""
+   bio = """Security Analyst || CTF player   
+
+Philippians 4:13"""
    links = [
-#     { email = "mailto:" },
+#      { email = "mailto:victormaina2024@outlook.com" },
 #     { link = "https://link-to-some-website.com/" },
 #     { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
 #     { apple = "https://www.apple.com" },
@@ -32,17 +38,18 @@ title = "V1c70r_n00b"
 #     { facebook = "https://facebook.com/username" },
 #     { flickr = "https://www.flickr.com/photos/username/" },
 #     { foursquare = "https://foursquare.com/username" },
-     { github = "https://github.com/V1c70r_n00b" },
+     { github = "https://github.com/V1c70rn00b" },
 #     { gitlab = "https://gitlab.com/username" },
 #     { google = "https://www.google.com/" },
 #     { hashnode = "https://username.hashnode.dev" },
 #     { instagram = "https://instagram.com/username" },
+#     { itch-io = "https://username.itch.io" },
 #     { keybase = "https://keybase.io/username" },
 #     { kickstarter = "https://www.kickstarter.com/profile/username" },
 #     { lastfm = "https://lastfm.com/user/username" },
-#     { linkedin = "https://linkedin.com/in/" },
+     { linkedin = "https://www.linkedin.com/in/victor-mwai/" },
 #     { mastodon = "https://mastodon.instance/@username" },
-#     { medium = "https://medium.com/" },
+     { medium = "https://medium.com/@V1c70r_n00b" },
 #     { microsoft = "https://www.microsoft.com/" },
 #     { orcid = "https://orcid.org/userid" },
 #     { patreon = "https://www.patreon.com/username" },
@@ -55,12 +62,15 @@ title = "V1c70r_n00b"
 #     { stack-overflow = "https://stackoverflow.com/users/userid/username" },
 #     { steam = "https://steamcommunity.com/profiles/userid" },
 #     { telegram = "https://t.me/username" },
+#     { threads = "https://www.threads.net/@username" },
 #     { tiktok = "https://tiktok.com/@username" },
 #     { tumblr = "https://username.tumblr.com" },
 #     { twitch = "https://twitch.tv/username" },
-#     { twitter = "https://twitter.com/" },
-#     { x-twitter = "https://twitter.com/username" },
+#     { twitter = "https://x.com/v1c70r_n00b" },
+     { "x-twitter" = "https://twitter.com/v1c70r_n00b" },
 #     { whatsapp = "https://wa.me/phone-number" },
 #     { youtube = "https://youtube.com/username" },
 #     { ko-fi = "https://ko-fi.com/username" },
-  ]
+#     { codeberg = "https://codeberg.org/username"},
+   ]
+
