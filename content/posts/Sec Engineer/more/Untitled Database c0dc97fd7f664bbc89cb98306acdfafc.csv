@@ -1,0 +1,59 @@
+﻿Property,"Semantic analysis: 
+This type of analysis can be compared to grepping for potentially 
+insecure functions while doing manual code reviews. It aims to find 
+flaws concerning the use of potentially insecure code in a localised 
+context.Examples of this include searching for calls to mysqli_query() where GET or POST parameters are directly concatenated into the query string:mysqli_query($db, ""SELECT * from users where username="".$_GET['username'])",Files
+,"Dataflow analysis: 
+There are situations where potentially dangerous functions are in use, 
+but it isn't clear whether or not a vulnerability is present just by 
+analysing the local context around the function call. Take, for example,
+ a function defined as follows:
+
+function db_query($conn, $query){
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
+By looking at the function's code, it's hard to say if there are any 
+vulnerabilities. Analysing the local context of the call to a dangerous 
+function is not enough in this case.
+Dataflow analysis will trace how information flows from inputs the 
+user can manipulate to potentially vulnerable functions, just as we did 
+when manually analysing the provided application's code. In dataflow 
+analysis terminology, data inputs will be referred to as sources, and potentially vulnerable functions will be referred to as sinks. If data flows from a source to a sink without sanitisation, we have a vulnerability.
+
+Going back to the db_query() function, dataflow analysis
+ would have to find all of its usages and trace back to see if any 
+tainted input (the source) is sent to it, finally ending up as part of 
+the query executed by mysqli_query() (the sink).","https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/fb294ccfe9bbd914c21a174e64f13213.png, https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/aa9389c3ba8aaadd6ed4ce84025f818d.png"
+,"Control flow analysis:
+ Analyses the order of operations in the code in search for race 
+conditions, use of uninitialised variables or resource leaks. As an 
+example, look at the following piece of Java code:
+
+String cmd = System.getProperty(""cmd"");  
+cmd = cmd.trim();
+If the cmd property isn't defined, the call to System.getProperty() will return NULL. Calling the trim method from a NULL variable will throw an exception on runtime.",https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/1747a47ae9ed1257e9a2e83cf51940bd.png
+,"Structural analysis: 
+Analyses specific code structures of each programming language. This 
+includes following best practices when declaring classes, evaluating 
+code blocks that may never execute (dead code), correctly using 
+try/catch blocks and other issues related to using insecure 
+cryptographic material (weak keys or IVs).
+Here's a quick example of code that would be detected by structural analysis:
+
+$options = array('private_key_bits' => 1024, 'private_key_type' => OPENSSL_KEYTYPE_RSA);  
+$res = openssl_pkey_new($options);
+In this case, we have an implementation of RSA with a key size of 1024, considered insufficient by today's standards.",https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/8e1238f36efec1e0d531a1b3fb422d7e.png
+,"Configuration analysis:
+ Searches for application configuration flaws rather than the code 
+itself. As an example, applications running under Internet Information 
+Services will have a configuration file called web.config, PHP will hold all of its configuration options in a file called php.ini,
+ and most applications will use some configuration file. By checking 
+configurations, the tool will identify possible improvements.
+Here's an example of two configuration directives in PHP that would 
+probably raise an alert on SAST tools, as they facilitate some attack 
+vectors for RFI, SSRF or other:
+
+allow_url_include = On
+allow_url_fopen = On",https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/66518f2330b41f5fcab67b49daae3fc4.png

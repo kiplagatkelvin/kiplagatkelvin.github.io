@@ -1,0 +1,40 @@
+﻿Column 1,Column 2,Column 3
+,"1. Event Notification
+                            
+
+                                The loop begins when an issue has been 
+reported. It triggers the incident response process and sets the stage 
+for the subsequent steps.
+                            
+2. Documentation
+                            
+
+                                The underlying issue is documented in 
+detail, including information about the nature of the incident, the 
+systems affected, and any potential threats or vulnerabilities. 
+Documentation is a critical step that provides a foundation for the rest
+ of the process.
+                            
+3. Evidence Collection
+                            
+
+                                Evidence of the incident is collected, 
+including log files, network traffic data, and other relevant 
+information. The collected evidence provides valuable insights into the 
+incident and helps identify potential threats.
+                            
+4. Artefact Identification
+                            
+
+                                The collected evidence is analysed to 
+identify artefacts related to the incident. These artefacts can provide 
+clues about the threat's nature and the damage's extent.
+                            
+5. Pivot Point Discovery
+                            
+
+                                Based on the identified artefacts, new 
+areas of investigation may be discovered. These pivot points can lead to
+ new insights and help further refine the incident's scope. After this 
+step, the process loops back to the documentation phase, incorporating 
+the new findings.",https://tryhackme-images.s3.amazonaws.com/user-uploads/63da722f2d207d0049da10b1/room-content/c515da92a62bbd1dc087db0ac1f10eb7.svg

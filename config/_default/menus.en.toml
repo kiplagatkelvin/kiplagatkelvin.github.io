@@ -52,30 +52,18 @@
   pageRef = "tags"
   weight = 30
 
-[[main]]
-  identifier = "twitter"
-  pre = "x-twitter"
-  url = "https://twitter.com/"
-  weight = 200
-
-[[main]]
-  identifier = "github"
-  pre = "github"
-  url = "https://github.com/V1c70rn00b"
-  weight = 400
-
 
 # -- Footer Menu --
 # The footer menu is displayed at the bottom of the page, just before
 # the copyright notice. Configure as per the main menu above.
 
 
- [[footer]]
-   name = "Tags"
-   pageRef = "tags"
-   weight = 10
+# [[footer]]
+#   name = "Tags"
+#   pageRef = "tags"
+#   weight = 10
 
- [[footer]]
-   name = "Categories"
-   pageRef = "categories"
-   weight = 20
+# [[footer]]
+#   name = "Categories"
+#   pageRef = "categories"
+#   weight = 20

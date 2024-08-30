@@ -1,0 +1,17 @@
+﻿Column 1,Column 2,Column 3
+,"Logs are a record of events within a system. These 
+records provide a detailed account of what a system has been doing, 
+capturing a wide range of events such as user logins, file accesses, 
+system errors, network connections, and changes to data or system 
+configurations.
+                
+
+                        While the specific details may differ based on 
+the type of log, a log entry usually includes the following information:
+                    
+• A timestamp of when an event was logged
+• The name of the system or application that generated the log entry
+• The type of event that occurred
+• Additional details about the event, such as the user who initiated the event or the device's IP address that generated the event
+
+                    This information is typically stored in a log file, which contains aggregated entries of what occurred at any given time on a system.",https://tryhackme-images.s3.amazonaws.com/user-uploads/63da722f2d207d0049da10b1/room-content/624b4e33606f8b0e1dc2ff887eb70c3f.svg

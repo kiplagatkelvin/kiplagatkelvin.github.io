@@ -1,0 +1,84 @@
+﻿Property,"Data Sources
+                        Data Sources are the systems or applications configured to log system events or user activities. These are the origin of logs.",Files
+,"Parsing
+                        
+
+                            Parsing is breaking down the log data into 
+more manageable and understandable components. Since logs come in 
+various formats depending on the source, it's essential to parse these 
+logs to extract valuable information.",https://tryhackme-images.s3.amazonaws.com/user-uploads/63da722f2d207d0049da10b1/room-content/b92ca5757d85ab49ee32cb0217b84b3a.svg
+,"Normalisation
+                        
+
+                            Normalisation is standardising parsed data. 
+It involves bringing the various log data into a standard format, making
+ comparing and analysing data from different sources easier. It is 
+imperative in environments with multiple systems and applications, where
+ each might generate logs in another format.",https://tryhackme-images.s3.amazonaws.com/user-uploads/63da722f2d207d0049da10b1/room-content/6d50d78e6c09b878bc4bf6aebf73b7a9.svg
+,"Sorting
+                        
+
+                            Sorting is a vital aspect of log analysis, 
+as it allows for efficient data retrieval and identification of 
+patterns. Logs can be sorted by time, source, event type, severity, and 
+any other parameter present in the data. Proper sorting is critical in 
+identifying trends and anomalies that signal operational issues or 
+security incidents.
+                        ",https://tryhackme-images.s3.amazonaws.com/user-uploads/63da722f2d207d0049da10b1/room-content/26eb3e15a848f9249e2951ef44bbcedb.svg
+,"Classification
+                        
+
+                            Classification involves assigning categories
+ to the logs based on their characteristics. By classifying log files, 
+you can quickly filter and focus on those logs that matter most to your 
+analysis. For instance, classification can be based on the severity 
+level, event type, or source. Automated classification using machine 
+learning can significantly enhance this process, helping to identify 
+potential issues or threats that could be overlooked.
+                        ",https://tryhackme-images.s3.amazonaws.com/user-uploads/63da722f2d207d0049da10b1/room-content/907a1ff6f5a4c8fd0c0250282a23568f.svg
+,"Enrichment
+                        
+
+                            Log enrichment adds context to logs to make 
+them more meaningful and easier to analyse. It could involve adding 
+information like geographical data, user details, threat intelligence, 
+or even data from other sources that can provide a complete picture of 
+the event.
+                        
+
+                            Enrichment makes logs more valuable, 
+enabling analysts to make better decisions and more accurately respond 
+to incidents. Like classification, log enrichment can be automated using
+ machine learning, reducing the time and effort required for log 
+analysis.
+                        ",https://tryhackme-images.s3.amazonaws.com/user-uploads/63da722f2d207d0049da10b1/room-content/2f5c66bfdad44c7f2fd5dd211a7541fc.svg
+,"Correlation
+                        
+
+                            Correlation involves linking related records
+ and identifying connections between log entries. This process helps 
+detect patterns and trends, making understanding complex relationships 
+between various log events easier. Correlation is critical in 
+determining security threats or system performance issues that might 
+remain unnoticed.
+                        ",https://tryhackme-images.s3.amazonaws.com/user-uploads/63da722f2d207d0049da10b1/room-content/0a909d3f679c458f65ef08d5770389fc.svg
+,"Visualisation
+                        
+
+                            Visualisation represents log data in 
+graphical formats like charts, graphs, or heat maps. Visually presenting
+ data makes recognising patterns, trends, and anomalies easier. 
+Visualisation tools provide an intuitive way to interpret large volumes 
+of log data, making complex information more accessible and 
+understandable.
+                        ",https://tryhackme-images.s3.amazonaws.com/user-uploads/63da722f2d207d0049da10b1/room-content/f19a2dcb7e6af13d489590b4b13c6c3f.svg
+,"Reporting
+                        
+
+                            Reporting summarises log data into 
+structured formats to provide insights, support decision-making, or meet
+ compliance requirements. Effective reporting includes creating clear 
+and concise log data summaries catering to stakeholders' needs, such as 
+management, security teams, or auditors. Regular reports can be vital in
+ monitoring system health, security posture, and operational efficiency.
+                        ",https://tryhackme-images.s3.amazonaws.com/user-uploads/63da722f2d207d0049da10b1/room-content/315f0456ea5f0130ac6a05a7d17153f3.svg

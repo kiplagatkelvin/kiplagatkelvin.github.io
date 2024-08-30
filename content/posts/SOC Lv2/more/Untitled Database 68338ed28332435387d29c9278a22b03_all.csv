@@ -1,0 +1,6 @@
+﻿Column 1,Column 2,Column 3
+"• Hot Storage: Logs from the past 3-6 months that are most accessible. Query speed should be near real-time, depending on the complexity of the query.
+                            
+• Warm Storage: Logs from  six months to 2 years, acting as a data lake, easily accessible but not as immediate as Hot storage.
+                            
+• Cold Storage: Archived or compressed logs from 2-5 years. These logs are not easily accessible and are usually used for retroactive analysis or scoping purposes.",,https://tryhackme-images.s3.amazonaws.com/user-uploads/63da722f2d207d0049da10b1/room-content/ffc7ff68c1584d3c5ddf13b47c237c69.png
