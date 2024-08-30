@@ -3,7 +3,7 @@ title: "Block Chain"
 date: 2024-04-29
 draft: false # this section allows the post to be published and be public, is it is set to true the post will not be published.
 summary: "Web 3.0" # Here you can write a small summary of the post if needed
-tags: [Web 3 Intor, ]
+tags: [Web3.0 Intro]
 categories: [Block Chain, Programming]
 ---
 
