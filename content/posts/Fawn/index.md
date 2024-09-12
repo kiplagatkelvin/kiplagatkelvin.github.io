@@ -3,8 +3,8 @@ title: "Fawn"
 date: 2024-09-12
 draft: false # this section allows the post to be published and be public, is it is set to true the post will not be published.
 summary: "FTP" # Here you can write a small summary of the post if needed
-tags: [HTB, Very Easy, FTP]
-categories: [Tier0, HTB]
+tags: [HTB, FTP, Very Easy]
+categories: [Tier0, Starting point]
 ---
 # Fawn
 
