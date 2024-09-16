@@ -1,5 +1,6 @@
 ---
 title: "Security Engineer"
+description: This is a blog on waht a security engineer does in anutshell, it also go ahead to give details on the tasks involved in this role.
 date: 2024-01-22
 draft: false # this section allows the post to be published and be public, is it is set to true the post will not be published.
 summary: "Credit to TryHackMe" # Here you can write a small summary of the post if needed

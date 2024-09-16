@@ -1,5 +1,6 @@
 ---
 title: "Walking an application"
+description: This is a blog on what a web application contains and what is required to exploit it.
 date: 2023-05-12
 draft: false
 summary: "Websecurity can sometimes be fun"

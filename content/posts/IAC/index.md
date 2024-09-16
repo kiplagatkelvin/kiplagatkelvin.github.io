@@ -1,5 +1,6 @@
 ---
 title: "Infrastructure as code"
+description: This is a blog on infrastructure built by code from scratch, this helps to deploy resources to the cloud without making mistakes.
 date: 2024-03-02
 draft: false # this section allows the post to be published and be public, is it is set to true the post will not be published.
 summary: "Credit to TryHackMe" # Here you can write a small summary of the post if needed

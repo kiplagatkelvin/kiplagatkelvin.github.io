@@ -1,5 +1,6 @@
 ---
 title: "Elements of Security Operation"
+description: This is a blog on what is required as the elements of  security operation, the elements here are mostly done by SOC annalyst in their day to day work.
 date: 2023-05-12
 draft: false
 summary: "Operations here and there.."

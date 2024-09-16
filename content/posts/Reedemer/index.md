@@ -1,5 +1,6 @@
 ---
 title: "Reedemer"
+dscription: This is a writeup on Reedemer machine on HackTheBox starting point Tier0 level, have some fun while solving the box.
 date: 2024-09-14
 draft: false # this section allows the post to be published and be public, is it is set to true the post will not be published.
 summary: "Reedeming yourself" # Here you can write a small summary of the post if needed

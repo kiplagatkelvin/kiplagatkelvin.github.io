@@ -1,6 +1,6 @@
-
 ---
 title: "Kerberos"
+dscription: This is a blog on what kerberos is, afamous protocol used in active directory networks in many organizations.
 date: 2024-01-15
 draft: false # this section allows the post to be published and be public, is it is set to true the post will not be published.
 summary: "Credit to TryHackMe" # Here you can write a small summary of the post if needed

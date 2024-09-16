@@ -1,5 +1,6 @@
 ---
 title: "Block Chain"
+description: What is Blockchain? Have you ever wondered want happens in decentralized transactions, where money sent can beseen publicly and records can not be erased. Join me here as I elaborate.
 date: 2024-04-29
 draft: false # this section allows the post to be published and be public, is it is set to true the post will not be published.
 summary: "Web 3.0" # Here you can write a small summary of the post if needed

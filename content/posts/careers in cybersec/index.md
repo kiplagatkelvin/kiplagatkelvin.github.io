@@ -1,5 +1,6 @@
 ---
 title: "Careers in cyber security"
+description: Here is a blog on different careers on cybersecurity, do niot feel lost when starting out.
 date: 2023-05-11
 draft: false
 summary: "Trying to understand the careers"

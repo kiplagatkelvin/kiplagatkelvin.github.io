@@ -1,5 +1,6 @@
 ---
 title: "Phishing"
+dscription: This is a blog on how emails work and wat it takes for ono to be phished.
 date: 2024-01-13
 draft: false # this section allows the post to be published and be public, is it is set to true the post will not be published.
 summary: "Sea full of phishes" # Here you can write a small summary of the post if needed

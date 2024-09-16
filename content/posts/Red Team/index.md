@@ -1,5 +1,6 @@
 ---
 title: "Red Team"
+description: This is a blog on red teaming, it provides details entailed on the tryhackme red team learning path, go ahead and subscribe to the platform for more hands on fun.
 date: 2024-02-15
 draft: false
 summary: "Credit to TryHackMe"

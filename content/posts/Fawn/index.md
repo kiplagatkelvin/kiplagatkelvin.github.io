@@ -1,5 +1,6 @@
 ---
 title: "Fawn"
+description: This a writeup on the Fawn machine from HackTheBox starting point Tier0 level, heave some fun reading it.
 date: 2024-09-12
 draft: false # this section allows the post to be published and be public, is it is set to true the post will not be published.
 summary: "FTP" # Here you can write a small summary of the post if needed

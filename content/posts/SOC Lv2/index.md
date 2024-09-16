@@ -1,5 +1,6 @@
 ---
 title: "SOC Lv2"
+description: This is a blog on what a level 2 SOC analyst does on a day to day basis, moreover, it educates on the tasks the SOC analyst does on a daily role.
 date: 2024-02-27
 draft: false # this section allows the post to be published and be public, is it is set to true the post will not be published.
 summary: "Credit to TryHackMe" # Here you can write a small summary of the post if needed

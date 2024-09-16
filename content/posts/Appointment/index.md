@@ -1,6 +1,7 @@
 ---
 title: "Appointment"
 date: 2024-09-16
+description: This is a writeup on Appoint machine from HackTheBox starting point Tier1.
 draft: false # this section allows the post to be published and be public, is it is set to true the post will not be published.
 summary: "Waiting on the line." # Here you can write a small summary of the post if needed
 tags: [HTB, Very Easy ]

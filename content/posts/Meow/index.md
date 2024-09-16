@@ -1,5 +1,6 @@
 ---
 title: "Meow"
+description: This is a writeup on Meow machine from HackTheBox startingpoint Tier0 level, enjoy while at it.
 date: 2024-09-11
 draft: false # this section allows the post to be published and be public, is it is set to true the post will not be published.
 summary: "Meow, meow" # Here you can write a small summary of the post if needed

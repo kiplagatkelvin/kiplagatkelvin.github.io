@@ -1,5 +1,6 @@
 ---
 title: "Dancing"
+description: This is a writeup on Dancing machine on HackTheBox starting point Tier0.
 date: 2024-09-13
 draft: false # this section allows the post to be published and be public, is it is set to true the post will not be published.
 summary: "Only the flexible to dance." # Here you can write a small summary of the post if needed

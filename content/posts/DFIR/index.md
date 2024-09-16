@@ -1,5 +1,6 @@
 ---
 title: "Digital Forensics and Incidence Response"
+description: This is a blog on digital forensics from tryhackme, a platform that makes it easier for one to dive into cybersecurity.
 date: 2024-01-10
 draft: false # this section allows the post to be published and be public, is it is set to true the post will not be published.
 summary: "Credit to TryHackMe" # Here you can write a small summary of the post if needed
