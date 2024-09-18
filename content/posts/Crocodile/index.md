@@ -3,7 +3,7 @@ title: "Crocodile"
 description: this is a writeup on Crocodile starting point Tier 1 level machine on HackTheBox
 date: 2024-09-18
 draft: false # this section allows the post to be published and be public, is it is set to true the post will not be published.
-summary: "CrocoWhy did the FTP server break up with the client? Because it just couldn't handle all the passive aggression! 😄" # Here you can write a small summary of the post if needed
+summary: "Croco, why did the FTP server break up with the client? Because it just couldn't handle all the passive aggression! 😄" # Here you can write a small summary of the post if needed
 tags: [HTB, Very Easy ]
 categories: [Tier1, Starting point]
 ---
