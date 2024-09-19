@@ -19,6 +19,7 @@
   name = "Portfolio"
   url = "https://v1c70rn00b.github.io/Portfolio/"
   weight = 10
+  
 
 #[[main]]
 #  name = "example sub-menu 1"
@@ -53,6 +54,10 @@
   pageRef = "tags"
   weight = 40
 
+[[main]]
+  name = "Resource"
+  pageRef = "Resources"
+  weight = 50
 
 # -- Footer Menu --
 # The footer menu is displayed at the bottom of the page, just before
