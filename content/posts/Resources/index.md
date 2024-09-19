@@ -3,12 +3,12 @@ title: "Resources"
 description: Blog on getting started on cyber security, cloud computing and Block chain.
 date: 2024-09-19
 draft: false # this section allows the post to be published and be public, is it is set to true the post will not be published.
-summary: "I’ve finally learned how to code! Boss: "Great! Now learn how to un-code this bug you just created." 😅" # Here you can write a small summary of the post if needed
+summary: "Blog helping on getting into tech" # Here you can write a small summary of the post if needed
 tags: [Careers]
-categories: [Getting into Tech]
+categories: [Technology]
 ---
 # Getting started
-ss
+
 ![Untitled.jpg](Untitled.jpg)
 
 Have you ever wondered where to begin when starting a career or shifting to a new path? I've been there too. I'll outline the routes that helped me advance in cybersecurity, as well as other tech careers you can explore. I'll also highlight paths for those interested in cloud computing with Microsoft, Google Cloud Platform, and AWS—plus blockchain technology.
