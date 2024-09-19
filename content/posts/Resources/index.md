@@ -1,7 +1,7 @@
 ---
 title: "Resources"
 description: Blog on getting started on cyber security, cloud computing and Block chain.
-date: 2023-09-19
+date: 2024-09-19
 draft: false # this section allows the post to be published and be public, is it is set to true the post will not be published.
 summary: "I’ve finally learned how to code! Boss: "Great! Now learn how to un-code this bug you just created." 😅" # Here you can write a small summary of the post if needed
 tags: [Careers]
