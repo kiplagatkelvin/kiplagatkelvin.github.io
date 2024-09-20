@@ -15,7 +15,9 @@ Have you ever wondered where to begin when starting a career or shifting to a ne
 
 # **Cyber Security**
 
-There are many certifications out there for different cyber security roles, however, one needs to also get the basics skills required for getting into cyber security such as networking, understanding different operating systems such as windows and UNIX based operating systems, computing essentials. I will highlight sources on where one can start learning the basics.
+While there are numerous certifications available for various cybersecurity roles, it's crucial to first acquire the fundamental skills necessary for entering the field. These basics include networking, understanding different operating systems (such as Windows and Unix-based systems), and computing essentials. I'll provide resources for learning these foundational skills. Below, you'll find a simple roadmap of certifications that can help you enter the job market. However, it's important to note that certifications themselves are not as crucial as the skills gained while pursuing them.
+
+![certs.jpg](certs.jpg)
 
 ## Intro to cybersecurity
 
@@ -25,11 +27,11 @@ The sources that one can freely learn on the use of the kali linux operating sys
 
 - TryHackMe’s linux fundamental 1 room
     
-    [https://tryhackme.com/r/room/linuxfundamentalspart1](https://tryhackme.com/r/room/linuxfundamentalspart1)
+    [linux fundamentals part1](https://tryhackme.com/r/room/linuxfundamentalspart1)
     
 - Overthewire
     
-    [https://overthewire.org/wargames/bandit/](https://overthewire.org/wargames/bandit/)
+    [bandit/](https://overthewire.org/wargames/bandit/)
     
 - HackTheBox academy Linux Fundamental module
     
