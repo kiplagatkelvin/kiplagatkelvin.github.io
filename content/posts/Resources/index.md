@@ -140,7 +140,7 @@ Some of the above platforms also provide certifications that enable one to gain 
     [Cyberranges](https://www.cyberranges.com/)
     
 
-# Cloud computing
+# **Cloud computing**
 
 Many cloud providers offer certifications to familiarize users with their technologies, including Microsoft, AWS, and GCP (Google Cloud Platform). Additionally, there are platforms that provide CTF-like labs where individuals can practice their cloud computing skills. In this section, we'll outline roadmaps to help you break into AWS, GCP, and Microsoft Azure.
 
@@ -162,7 +162,7 @@ Many cloud providers offer certifications to familiarize users with their techno
     
     As seen below is a chart highlighting the certifications one is required to have in order to become an AWS cloud practitioner. However, the are CTF-like labs where one can put their skills to the test, these platforms are such as
     
-    1. [Cloudgoat](https://github.com/RhinoSecurityLabs/cloudgoat)
+    1.  [Cloudgoat](https://github.com/RhinoSecurityLabs/cloudgoat)
     2.  [aws Flaws](http://flaws.cloud/)
     
     ![image.png](image%204.png)
@@ -174,7 +174,7 @@ Beyond obtaining certifications, it's crucial to continuously practice and hone 
 2. [Cloudgoat](https://github.com/RhinoSecurityLabs/cloudgoat)
 3. [Flaws](http://flaws.cloud/)
 
-# Block Chain
+# **Block Chain**
 
 As the world embraces cryptocurrency, Blockchain technologies are growing rapidly. This swift expansion has led more individuals to explore the field, eager to understand the buzz surrounding Blockchain technology. The best platform I continue to learn from is Cyfrin Updraft, a free hands-on course where learners gain knowledge through practical projects. By the end of the course, participants emerge not only with knowledge and skills but also with a completed project—tangible proof of their work.
 
