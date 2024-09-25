@@ -1,6 +1,6 @@
 ---
 title: "Oopsie"
-description: this is a writeup on the machine Oopsie from hackthebox starting point Tier1 level.
+description: this is a writeup on the machine Oopsie from hackthebox starting point Tier2 level.
 date: 2024-09-24
 draft: false # this section allows the post to be published and be public, is it is set to true the post will not be published.
 summary: "OOPsieess" # Here you can write a small summary of the post if needed
