@@ -31,7 +31,7 @@ The sources that one can freely learn on the use of the kali linux operating sys
     
 - Overthewire
     
-    [bandit/](https://overthewire.org/wargames/bandit/)
+    [bandit](https://overthewire.org/wargames/bandit/)
     
 - HackTheBox academy Linux Fundamental module
     
