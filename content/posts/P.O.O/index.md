@@ -13,26 +13,19 @@ categories: [AD, Prolabs]
 # Machine Info
 
 > Professional Offensive Operations
-
 > By [eks](https://app.hackthebox.com/home/users/profile/302) and [mrb3n](https://app.hackthebox.com/home/users/profile/2984)
-
 > Professional Offensive Operations is a rising name in the cyber security world.
-
 > Lately they've been working into migrating core services and 
 > components to a state of the art cluster which offers cutting edge 
 > software and hardware.
-
 > P.O.O. is designed to put your skills in enumeration, lateral 
 > movement, and privilege escalation to the test within a small Active 
 > Directory environment that is configured with the latest operating 
 > systems and technologies.
-
 > The goal is to compromise the perimeter host, escalate privileges and
 > ultimately compromise the domain while collecting several flags along 
 > the way.
-
 > Entry Point: `10.13.38.11` 
-
 > Aside from the above, we are to get our foothold onto the macine through a n sql server and pivot our way from there to the admin level.
 
 # Enumeration
