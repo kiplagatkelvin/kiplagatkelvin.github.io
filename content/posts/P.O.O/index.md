@@ -2,7 +2,7 @@
 title: "P.O.O"
 description: A writeup on the P.O.O Prolab.
 date: 2024-10-07
-draft: True # this section allows the post to be published and be public, is it is set to true the post will not be published.
+draft: False # this section allows the post to be published and be public, is it is set to true the post will not be published.
 summary: "Professional Offensive Operations" # Here you can write a small summary of the post if needed
 tags: [HTB, Mini-prolab, Beginner ]
 categories: [AD, Prolabs]
