@@ -1,7 +1,7 @@
 languageCode = "en"
 languageName = "English"
 weight = 1
-title = "V1C70R_N00B"
+title = "Victor'$ Blog"
 
 [params]
   displayName = "EN"
@@ -14,7 +14,7 @@ title = "V1C70R_N00B"
 #   copyright = "Copy, _right?_ :thinking_face:"
 
  [author]
-   name = "Victor Mwai"
+   name = "V1C70R_N00B"
    email = "victormaina2024@outlook.com"
    image = "profile.png"
    imageQuality = 96
