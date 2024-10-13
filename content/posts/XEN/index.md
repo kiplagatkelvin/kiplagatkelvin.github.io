@@ -3,7 +3,7 @@ title: "XEN"
 description: A writeup on the XEN mini-prolab.
 date: 2024-10-12
 draft: false # this section allows the post to be published and be public, is it is set to true the post will not be published.
-summary: "XEN si an AD lab simulation." # Here you can write a small summary of the post if needed
+summary: "XEN is an AD lab simulation." # Here you can write a small summary of the post if needed
 tags: [HTB, Mini-prolab, Intermediate]
 categories: [AD, prolabs]
 ---
