@@ -1,6 +1,6 @@
 ---
 title: "WIFI HaCKING"
-date: 2024-01-06
+date: 2025-01-06
 draft: false # this section allows the post to be published and be public, is it is set to true the post will not be published.
 summary: "Wireless Fidelity" # Here you can write a small summary of the post if needed
 tags: [WIFI, ]
