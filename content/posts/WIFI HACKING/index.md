@@ -8,6 +8,7 @@ categories: [Network security]
 ---
 # WIFI HACKING
 
+
 # **Introduction**
 
 In this lab, we shall be doing wifi hacking from the [WifiChallenge Lab v2.1](https://lab.wifichallenge.com). We shall start by downloading the virtual machine from the [proton drive](https://drive.proton.me/urls/Q4WPB23W7R#Qk4nxMH8Q4oQ) provided to us from the site, here you can find the virtual machine as per the hypervisor you prefer to use.
@@ -494,6 +495,113 @@ we can try and curl one of the host and see if we can get the flag.
 
 by curling the host `192.168.2.8` we get the user flag.
 
+## **12. What is the wifi-offices password?**
+
+**For this challenge,** imagine you’re trying to connect to a Wi-Fi network called "wifi-offices," but it doesn’t show up in the list of available networks. This could mean the network is in a different location or no longer exists. However, there’s still a way to figure out its password. Here’s how:
+
+We can create a fake access point (AP) that imitates "wifi-offices" using a tool like [hostapd-mana](https://github.com/sensepost/hostapd-mana). When devices nearby try to connect to this fake AP (because they’re still looking for "wifi-offices"), we can capture their connection attempts, also known as probes. From these, we can capture a handshake, which is like a key exchange between the device and the network. Once we have this handshake, we can run a dictionary attack on it to try and crack the password and see it in plain text.
+
+The contents of our config file shall contain the following details.
+
+```jsx
+interface=wlan1
+driver=nl80211
+hw_mode=g
+channel=1
+ssid=wifi-offices
+mana_wpaout=hostapd.hccapx
+wpa=2
+wpa_key_mgmt=WPA-PSK
+wpa_pairwise=TKIP CCMP
+wpa_passphrase=12345678
+```
+
+The  above file contents means the following
+
+### **1. `interface=wlan1`**
+
+- Specifies the **wireless interface** to be used for hosting the access point.
+- In this case, the interface is **`wlan1`**. This must be a wireless adapter that supports monitor and AP modes.
+
+### **2. `driver=nl80211`**
+
+- Indicates the **driver** to be used by hostapd.
+- **`nl80211`** is the standard driver interface used for modern Wi-Fi adapters with Linux.
+
+### **3. `hw_mode=g`**
+
+- Defines the **Wi-Fi mode** for the access point:
+    - **`g`**: Operates on the 2.4 GHz band, supporting 802.11g (and backward-compatible 802.11b) devices.
+    - Other options could include `a` (5 GHz) or `n` (802.11n for mixed bands).
+
+### **4. `channel=1`**
+
+- Specifies the **Wi-Fi channel** to use for the access point.
+- **Channel 1** operates on the 2.4 GHz frequency band. The channel you choose can affect performance and interference.
+
+### **5. `ssid=wifi-offices`**
+
+- Sets the **SSID (Service Set Identifier)** for the fake access point.
+- The AP will broadcast itself with the name **`wifi-offices`**, imitating a real network.
+
+### **6. `mana_wpaout=hostapd.hccapx`**
+
+- Configures the output file for **captured WPA/WPA2 handshakes**.
+- The captured handshake data will be saved to the file **`hostapd.hccapx`**, which can later be used for password cracking (e.g., with tools like Hashcat).
+
+### **7. `wpa=2`**
+
+- Specifies the **WPA protocol version** to be used:
+    - **`2`**: Configures WPA2 (more secure and commonly used).
+    - **`1`**: Would configure WPA (less secure and outdated).
+
+### **8. `wpa_key_mgmt=WPA-PSK`**
+
+- Defines the **key management protocol**:
+    - **`WPA-PSK`**: Stands for **WPA Pre-Shared Key**, the standard for personal Wi-Fi networks where a single password is shared among users.
+
+### **9. `wpa_pairwise=TKIP CCMP`**
+
+- Specifies the **encryption protocols** to be used for securing data:
+    - **`TKIP`**: Temporal Key Integrity Protocol (older and less secure, for backward compatibility).
+    - **`CCMP`**: Counter Mode Cipher Block Chaining Message Authentication Code Protocol (stronger encryption based on AES).
+
+### **10. `wpa_passphrase=12345678`**
+
+- Sets the **Wi-Fi password (passphrase)** for the rogue access point.
+- The password for this network is **`12345678`**.
+
+After writing the file and running it with hostapd-mana we get some hashes that we can crack using hashcat as shown below.
+
+![image.png](image%2035.png)
+
+trying to crack the hash using mode 2500 it does not work, we can try to change it to mode 2200 and try again
+
+![image.png](image%2036.png)
+
+After some research, I found out the hash was supposed to be separated from other unwanted characters using the following syntax.
+
+```jsx
+cat hostapd.hccapx | awk {'print $3'} > hostapd.22000
+
+```
+
+### Breakdown:
+
+1. **`cat hostapd.hccapx`**
+    - Reads (`concatenates`) the contents of the file `hostapd.hccapx` and outputs it.
+2. **`|` (Pipe)**
+    - Passes the output of `cat` as input to the next command.
+3. **`awk {'print $3'}`**
+    - Uses `awk`, a text processing tool, to extract the third column (`$3`) from each line.
+4. **`> hostapd.22000`**
+    - Redirects the output to a new file named `hostapd.22000`.
+
+We now have our password for the wifi as shown below.
+
+![image.png](image%2037.png)
+
+the password was easily found by using the syntax below with hashcat `hashcat -a 0 -m 22000 hostapd.22000 ~/rockyou-top100000.txt  --force`
 
 # SAE
 
@@ -505,7 +613,7 @@ However, keep in mind that WPA3 includes features like SAE (Simultaneous Authent
 
 First we will have to get the wifi network bssid number and frequency that we can use together with wacker to get the wifi password then use wpa_supplicant to be able to access the website to get the flag.
 
-![image.png](image%2037.png)
+![image.png](image%2038.png)
 
 we  now have the BSSID number `F0:9F:C2:11:0A:24` we can now use the BSSID to get the password using wacker with the syntax  `./wacker.py --wordlist ~/rockyou-top100000.txt --ssid wifi-management --bssid F0:9F:C2:11:0A:24 --interface wlan2 --freq 2462` 
 
@@ -529,7 +637,7 @@ here is the breakdown of the command
     - Specifies the frequency of the Wi-Fi channel in MHz.
     - `2462 MHz` corresponds to **channel 11** in the 2.4 GHz band. The tool will tune into this frequency to communicate with the target network.
 
-![image.png](image%2038.png)
+![image.png](image%2039.png)
 
 we  have our password, we can use it now to create a config file that we can use with wpa_supplicant, the following is the content of the file
 
@@ -567,11 +675,112 @@ the file content means as follows
         - `2`: Required (mandatory for WPA3).
     - `ieee80211w=2` ensures that MFP is enforced, providing additional protection against deauthentication attacks, which is required for WPA3 networks.
 
-![image.png](image%2039.png)
+![image.png](image%2040.png)
 
 We can now access the AP website at 192.168.14.1 as seen below and get our flag.
 
-![image.png](image%2040.png)
+![image.png](image%2041.png)
+
+## **14. What is the flag on the wifi-IT AP website?**
+
+When dealing with a network using WPA3-SAE, it’s possible to exploit a weakness if a client is configured to support both WPA2 and WPA3. Here’s how it works: we can trick the client into downgrading its connection to WPA2 by setting up a Rogue Access Point (RogueAP). Once the client connects to our RogueAP, we can capture the WPA2 handshake and later try to crack it.
+
+Take the example of the `wifi-offices` network. In this scenario, the access point (AP) supports both SAE (used in WPA3) and PSK (used in WPA2). This suggests that some clients might still accept PSK connections. To confirm this, we can analyze the data captured by tools like **airodump-ng**, specifically looking at the `.csv` file it generates. This file provides details about the authentication methods supported by the AP and its clients, helping us determine whether the downgrade attack is feasible.
+
+We shall start by identifying the BSSID of the wifi using `airodump-ng` that we can use later .
+
+![image.png](image%2042.png)
+
+we have the BSSID as `F0:9F:C2:1A:CA:25` ,we can now create a rogue AP but first we shall create our config file with the following contents
+
+```jsx
+interface=wlan1
+driver=nl80211
+hw_mode=g
+channel=11
+ssid=wifi-IT
+mana_wpaout=hostapd-management.hccapx
+wpa=2
+wpa_key_mgmt=WPA-PSK
+wpa_pairwise=TKIP CCMP
+wpa_passphrase=12345678
+```
+
+- **`interface=wlan1`**
+    
+    Specifies the wireless network interface to be used for the access point. Here, it’s **wlan1**.
+    
+- **`driver=nl80211`**
+    
+    Sets the driver for the wireless card. **`nl80211`** is the standard Linux driver used for most modern Wi-Fi devices.
+    
+- **`hw_mode=g`**
+    
+    Specifies the wireless mode. **`g`** indicates that the AP will operate on the **2.4 GHz band**, supporting 802.11g devices.
+    
+- **`channel=11`**
+    
+    Specifies the Wi-Fi channel on which the AP will operate. Channel **11** is a common choice for 2.4 GHz networks.
+    
+- **`ssid=wifi-IT`**
+    
+    Sets the **SSID (Service Set Identifier)** of the access point. This is the name of the network that devices will see when scanning for Wi-Fi. Here, the network is named **wifi-IT**.
+    
+- **`mana_wpaout=hostapd-management.hccapx`**
+    
+    Configures **mana-toolkit** to save captured WPA handshake data to a file named **`hostapd-management.hccapx`**. This can be used for offline password cracking.
+    
+- **`wpa=2`**
+    
+    Specifies the security protocol used for the network. **2** indicates WPA2, which is a secure Wi-Fi encryption standard.
+    
+- **`wpa_key_mgmt=WPA-PSK`**
+    
+    Sets the key management method. **`WPA-PSK`** (Pre-Shared Key) means devices will use a shared password for authentication.
+    
+- **`wpa_pairwise=TKIP CCMP`**
+    
+    Configures the encryption protocols:
+    
+    - **`TKIP`** (Temporal Key Integrity Protocol): An older encryption method.
+    - **`CCMP`** (Counter Mode with Cipher Block Chaining Message Authentication Code Protocol): A more secure encryption method based on AES. Modern devices usually prefer **CCMP**.
+- **`wpa_passphrase=12345678`**
+    
+    Sets the pre-shared key (Wi-Fi password) for the network. In this example, the password is **12345678**. It must be between 8 and 63 characters long.
+    
+    Before we set up our rogue AP lets check if the AP has MFP with wireshark as shown below.
+    
+    ![image.png](image%2043.png)
+    
+
+you may be wondering why we had to check MFP, let me break it down to you. **MFP (Management Frame Protection)** is a wireless network feature designed to secure **management frames** from being tampered with or spoofed. When **MFP is set to false** (or disabled), the network becomes more vulnerable to certain types of wireless attacks.
+
+### **When MFP is False: Potential Vulnerabilities**
+
+1. **Deauthentication and Disassociation Attacks**
+    - Attackers can send **spoofed deauthentication or disassociation frames** to disconnect clients from the network (e.g., using tools like **aireplay-ng**).
+    - This is commonly used in **Evil Twin attacks** or to capture WPA handshakes for password cracking.
+2. **Rogue Access Points and Evil Twin Attacks**
+    - An attacker can set up a malicious AP that mimics the real one.
+    - Clients may be tricked into connecting to the rogue AP if MFP is not enforcing management frame integrity.
+3. **Beacon Frame Spoofing**
+    - Attackers can inject **fake beacon frames** to confuse clients, leading to denial-of-service (DoS) attacks or manipulation of the network.
+4. **Channel Switching Attacks**
+    - Attackers can send forged management frames to force clients to switch to a different channel, disrupting communication.
+5. **Client Tracking**
+    - Without MFP, management frames can be captured and analyzed to track connected devices' activity, leading to privacy issues.
+
+In our case with MFP disabled we can use this opportunity to create a rogue AP and perform a deauth attack in parallel in order to capture the password for the network when a client tries to log in to our rogue AP as shown below.
+
+![image.png](image%2044.png)
+
+We can now crack the hashes to get the wifi password using hashcat. As we did in the challenge number 12 on PSK category.
+
+![image.png](image%2045.png)
+
+After we have our password we shall then create a config file that will allow us to login to the website to get the falg, for this section we can follow the previous challenge on how to use wpa_supplicant and dhclient to get an IP that we can use to access the wifi network for us to be able to access the website.
+
+![image.png](image%2046.png)
 
 # Recon MGT
 
@@ -585,13 +794,13 @@ You simply run **`airodump-ng`** on the correct channel of the network and patie
 
 However, we shall start first by identifying the channel of the wifi we are to connect to as shown below.
 
-![image.png](image%2044.png)
+![image.png](image%2047.png)
 
 It is on channel 44, we can now try and capture traffic on the channel as we wait for a client to connect to the network. After we capture the traffic, as from the hint, we can use [wifi_db](https://github.com/r4ulcl/wifi_db) to get the captured data from ariodump-ng in an arranged format that we can access from the database
 
 as shown below.
 
-![image.png](image%2045.png)
+![image.png](image%2048.png)
 
 The syntax used for dispalying the data in sqlite is as follows `python3 wifi_db.py -d wifi.sqlite /home/user/VICTOR/captures/psk/MGT` here is the explanation of the command
 
@@ -632,7 +841,7 @@ The syntax to run the script is as follows `bash pcapFilter.sh -f '-02.cap' -C` 
     This option tells the script to filter and display certificates. Certificates are often sent during the handshake process of networks using MGT or enterprise-level WPA protocols (e.g., WPA2-Enterprise). This data can provide insights into APs' configurations or help in crafting attacks like RogueAP or MITM.
     
 
-![image.png](image%2046.png)
+![image.png](image%2049.png)
 
 ## **17. What is the EAP method supported by the wifi-global AP?**
 
@@ -655,11 +864,11 @@ When testing the security of a network using EAP (Extensible Authentication Prot
 
 Below is how the output of the command looks like
 
-![image.png](image%2047.png)
+![image.png](image%2050.png)
 
 however, we could still identify the EAP method supported from hte database we got earlier
 
-![image.png](image%2048.png)
+![image.png](image%2051.png)
 
 # MGT
 
@@ -694,11 +903,11 @@ To target a misconfigured client on an MGT network, you can set up a Rogue Acces
     This sets the TLS negotiation strategy for the RogueAP to "balanced." It aims to balance security and compatibility when negotiating the TLS handshake with clients. This approach helps to mimic a real access point more convincingly.
     
 
-![image.png](image%2049.png)
+![image.png](image%2052.png)
 
 Using **`airodump-ng`**, we can identify the MAC addresses of the clients we want to target for a deauthentication attack. To ensure effectiveness, we execute this attack on both clients simultaneously. Since there are two access points (APs), the attack needs to target both of them. This is because disconnecting a client from one AP might cause it to reconnect to the other, rather than connecting to our Rogue Access Point (RogueAP).
 
-![image.png](image%2050.png)
+![image.png](image%2053.png)
 
 using the commands
 
@@ -713,7 +922,37 @@ iwconfig wlan1mon channel 44
 aireplay-ng -0 0 -a F0:9F:C2:71:22:15 wlan1mon -c 64:32:A8:07:6C:40
 ```
 
-![image.png](image%2051.png)
+![image.png](image%2054.png)
+
+After performing a deauth attack on the client with address `64:32:A8:07:6C:40` using two different rogueAPs that we had setup, we were able to get the hash that we can crack t get the password as shown below.
+
+![image.png](image%2055.png)
+
+the hash will be located in a logs directory under the eaphammer tool, where we can take it and get the hash alone using the syntax `cat /root/tools/eaphammer/logs/hostapd-eaphammer.log | grep hashcat | awk '{print $3}' >> hashcat.5500` 
+
+- **`cat /root/tools/eaphammer/logs/hostapd-eaphammer.log`**
+    - Reads and outputs the contents of the **Eaphammer log file**.
+- **`| grep hashcat`**
+    - Filters the output, keeping only lines that contain the word **"hashcat"** (likely lines containing extracted WPA hashes).
+- **`| awk '{print $3}'`**
+    - Extracts the **third column (`$3`)** from each matching line.
+    - This column probably contains the actual **WPA hash**.
+- **`>> hashcat.5500`**
+    - Appends (`>>`) the extracted hashes to a file named **`hashcat.5500`**.
+    - If `hashcat.5500` does not exist, it is created.
+
+after we get the hash, we can now crack it using hashcat as shown below
+
+```jsx
+root@WiFiChallengeLab:~/VICTOR/captures# hashcat -a 0 -m 5500 hashcat.5500 ~/rockyou-top100000.txt --force
+
+```
+
+after a while we have our password as shown below.
+
+![image.png](image%2056.png)
+
+Got stuck to access the website will look into it further later on.
 
 ## **19. What is CONTOSO\test flag on the wifi-corp AP website?**
 
@@ -745,7 +984,7 @@ echo 'CONTOSO\test' > test.user
     Provides the username for the attack. Here, the username is `test.user`, which is necessary since the attack targets WPA/WPA2 Enterprise networks that rely on usernames and passwords for authentication.
     
 
-![image.png](image%2052.png)
+![image.png](image%2057.png)
 
 with the password we have found we can now create a config file that we can use to connect to the network in order for us to access the webpage and get our flag.
 
@@ -766,11 +1005,11 @@ network={
 
 with that we are now provided with an IP address as shown below.
 
-![image.png](image%2053.png)
+![image.png](image%2058.png)
 
 after accessing the webpage, I used the password and username of test to be able to get the flag.
 
-![image.png](image%2054.png)
+![image.png](image%2059.png)
 
 ## **20. What is the flag for the user with pass 12345678 on the wifi-corp AP?**
 
@@ -786,11 +1025,12 @@ and now we shall perform the password spray attack
 
 we found our user as shown below.
 
-![image.png](image%2055.png)
+![image.png](image%2060.png)
 
-then edited our previous config file to use to access the website and we got our flag after logging to the website with the user’s credentials.
+then edited our previous config file to use to access the website and we got our flag after logging to the website with the user’s credentials
 
-![image.png](image%2056.png)
+![image.png](image%2061.png)
 
-![image.png](image%2057.png)
+![image.png](image%2062.png)
 
+##
