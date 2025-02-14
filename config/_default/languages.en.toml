@@ -1,13 +1,14 @@
 languageCode = "en"
 languageName = "English"
 weight = 1
-title = "Victor'$ Blog"
+title = "kelvin'$ Blog"
 
 [params]
   displayName = "EN"
   isoCode = "en"
   rtl = false
   dateFormat = "2 January 2006"
+
    logo = "img/logo.png"
    secondaryLogo = "img/secondary-logo.png"
    description = "Welcome to the land of geeks"
@@ -18,17 +19,22 @@ title = "Victor'$ Blog"
    email = "kiplagatkelvin034@gmail.com"
    image = "profile.png"
    imageQuality = 96
-   headline = """What if changing the world was just about being here? By showing up no matter how many times we get told we don’t belong? By staying true even when we are shamed into being false? By believing in ourselves even when we are too different? And if we all held on to that, if we refuse to budge and fall in line. if we stood our ground for long enough, just maybe the world can’t help but change around us
+   headline = """The digital world is a battlefield of innovation and deception. Every click, every line of code, every decision shapes the future of cybersecurity.
+
+⚡ The fearless don’t wait for permission to learn.
+🔍 The curious see threats as puzzles to be solved.
+🛡️ The resilient turn failures into stepping stones.
+
+You don’t need to follow the path—you can create your own. Because the future doesn’t belong to those who play it safe. It belongs to those who secure it.
+
+🚀 Think deeper. Hack smarter. Defend stronger.
  
-~ Elliot Alderson~
+   bio = """ Cyber Security Analyst | Threat intelligence analyst | Linux administrator | Information Security | IT Risk & Governance | IT Service management | Incident management
 
 """
-   bio = """Security Analyst || CTF player   
-
-Philippians 4:13"""
    links = [
-#      { email = "mailto:victormaina2024@outlook.com" },
-#     { link = "https://link-to-some-website.com/" },
+#      { email = "mailto:kiplagatkelvin034@gmail.com" },
+#     { link = "https://academy.kns.co.ke/students/details/678f4a051a66f493829364/" },
 #     { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
 #     { apple = "https://www.apple.com" },
 #     { blogger = "https://username.blogspot.com/" },
@@ -40,7 +46,7 @@ Philippians 4:13"""
 #     { facebook = "https://facebook.com/username" },
 #     { flickr = "https://www.flickr.com/photos/username/" },
 #     { foursquare = "https://foursquare.com/username" },
-     { github = "https://github.com/V1c70rn00b" },
+     { github = "https://github.com/kiplagatkelvin" },
 #     { gitlab = "https://gitlab.com/username" },
 #     { google = "https://www.google.com/" },
 #     { hashnode = "https://username.hashnode.dev" },
@@ -49,9 +55,9 @@ Philippians 4:13"""
 #     { keybase = "https://keybase.io/username" },
 #     { kickstarter = "https://www.kickstarter.com/profile/username" },
 #     { lastfm = "https://lastfm.com/user/username" },
-     { linkedin = "https://www.linkedin.com/in/victor-mwai/" },
+     { linkedin = "https://www.linkedin.com/in/kelvin-kiplagat-a47388216//" },
 #     { mastodon = "https://mastodon.instance/@username" },
-     { medium = "https://medium.com/@V1c70r_n00b" },
+     { medium = "https://medium.com/@kiplagatkelvin034" },
 #     { microsoft = "https://www.microsoft.com/" },
 #     { orcid = "https://orcid.org/userid" },
 #     { patreon = "https://www.patreon.com/username" },
@@ -68,9 +74,9 @@ Philippians 4:13"""
 #     { tiktok = "https://tiktok.com/@username" },
 #     { tumblr = "https://username.tumblr.com" },
 #     { twitch = "https://twitch.tv/username" },
-#     { twitter = "https://x.com/v1c70r_n00b" },
-     { "x-twitter" = "https://twitter.com/v1c70r_n00b" },
-#     { whatsapp = "https://wa.me/phone-number" },
+#     
+            
+#    { whatsapp = "https://wa.me/+254791475383" },
 #     { youtube = "https://youtube.com/username" },
 #     { ko-fi = "https://ko-fi.com/username" },
 #     { codeberg = "https://codeberg.org/username"},
