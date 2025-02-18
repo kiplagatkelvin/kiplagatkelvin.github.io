@@ -19,15 +19,9 @@ title = "kelvin'$ Blog"
    email = "kiplagatkelvin034@gmail.com"
    image = "profile.png"
    imageQuality = 96
-   headline = """The digital world is a battlefield of innovation and deception. Every click, every line of code, every decision shapes the future of cybersecurity.
-
-⚡ The fearless don’t wait for permission to learn.
-🔍 The curious see threats as puzzles to be solved.
-🛡️ The resilient turn failures into stepping stones.
-
-You don’t need to follow the path—you can create your own. Because the future doesn’t belong to those who play it safe. It belongs to those who secure it.
-
-🚀 Think deeper. Hack smarter. Defend stronger.
+   headline = """⚡ The digital world is a battlefield of innovation and deception—every action shapes cybersecurity’s future.
+                  Fearless learners don’t wait. 🔍 The curious solve threats like puzzles. 🛡️ The resilient turn failures into strength.
+                  Don't just follow the path—create it. The future belongs to those who secure it.
 """
  
    bio = """ Cyber Security Analyst | Threat intelligence analyst | Linux administrator | Information Security | IT Risk & Governance | IT Service management | Incident management
@@ -56,7 +50,7 @@ You don’t need to follow the path—you can create your own. Because the futur
 #     { keybase = "https://keybase.io/username" },
 #     { kickstarter = "https://www.kickstarter.com/profile/username" },
 #     { lastfm = "https://lastfm.com/user/username" },
-     { linkedin = "https://www.linkedin.com/in/kelvin-kiplagat-a47388216?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BhDXTGs2zR%2BqpvoWpKFNYaw%3D%3D" },
+     { linkedin = "https://www.linkedin.com/in/kelvin-kiplagat-a47388216/" },
 #     { mastodon = "https://mastodon.instance/@username" },
      { medium = "https://medium.com/@kiplagatkelvin034" },
 #     { microsoft = "https://www.microsoft.com/" },

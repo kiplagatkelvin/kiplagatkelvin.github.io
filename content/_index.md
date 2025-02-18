@@ -1,8 +1,16 @@
 ---
-title: "Kelvin's Blog"
-description: "Cybersecurity, Threat Hunting, and Ethical Hacking Articles"
+description: "Custom content for the Home page."
 ---
 
-## Latest Medium Posts
-
-{{< medium-feed >}}
+{{< typeit 
+  tag=h4
+  bold=true
+  speed=50
+  lifeLike=false
+  breakLines=true
+  lifeLike=true
+  startDelay=1000
+  loop=true
+>}}
+  There is a solution for everything, as long as you dedicate yourself enough.
+{{< /typeit >}}
