@@ -28,8 +28,8 @@ title = "kelvin'$ Blog"
 
 """
    links = [
-#      { email = "mailto:kiplagatkelvin034@gmail.com" },
-#     { link = "https://academy.kns.co.ke/students/details/678f4a051a66f493829364/" },
+     { email = "mailto:kiplagatkelvin034@gmail.com" },
+     { link = "https://academy.kns.co.ke/students/details/678f4a051a66f493829364/" },
 #     { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
 #     { apple = "https://www.apple.com" },
 #     { blogger = "https://username.blogspot.com/" },
@@ -71,7 +71,7 @@ title = "kelvin'$ Blog"
 #     { twitch = "https://twitch.tv/username" },
 #     
             
-#    { whatsapp = "https://wa.me/+254791475383" },
+     { whatsapp = "https://wa.me/+254791475383" },
 #     { youtube = "https://youtube.com/username" },
 #     { ko-fi = "https://ko-fi.com/username" },
 #     { codeberg = "https://codeberg.org/username"},
