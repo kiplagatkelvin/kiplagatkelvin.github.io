@@ -1,12 +1,11 @@
---
+
+---
 title: "A Practical Guide to Zero Trust Security: Implementing Network Segmentation with pfSense, MFA with Authy, and Continuous Monitoring Using Splunk"
 author: "Kiplagatkelvin"
 date: "2025-01-24"
 tags: ["Zero Trust", "pfSense", "MFA", "Authy", "Splunk", "Cybersecurity", "Network Security"]
 categories: ["Cybersecurity", "Network Security"]
 summary: "Learn how to implement a basic Zero Trust Architecture using pfSense for network segmentation, Authy for MFA, and Splunk for continuous monitoring."
-
-
 
 ---
 

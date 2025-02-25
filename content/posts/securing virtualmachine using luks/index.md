@@ -1,23 +1,17 @@
-<div>
 
-# Securing a Virtual Machine with LUKS Encryption and Best Practices on VMware: A Step-by-Step Guide {#securing-a-virtual-machine-with-luks-encryption-and-best-practices-on-vmware-a-step-by-step-guide .p-name}
+---
+title: "Securing a Virtual Machine with LUKS Encryption and Best Practices on VMware: A Step-by-Step Guide"
+date: 2025-02-25
+author: "Kelvin Kiplagat"
+description: "Step-by-step guide on configuring and securing a virtual machine using LUKS encryption and best security practices on VMware."
+tags: ["VMware", "LUKS Encryption", "Virtual Machine Security", "Cybersecurity"]
+categories: ["Cybersecurity", "Virtualization"]
+draft: false
+---
 
-</div>
 
-::: {.section .p-summary field="subtitle"}
-INTRODUCTION
-:::
-
-::: {.section .e-content field="body"}
-::: {#0be5 .section .section .section--body .section--first .section--last}
-::: section-divider
-
-------------------------------------------------------------------------
-:::
-
-::: section-content
-::: {.section-inner .sectionLayout--insetColumn}
-### Securing a Virtual Machine with LUKS Encryption and Best Practices on VMware: A Step-by-Step Guide {#32ff .graf .graf--h3 .graf--leading .graf--title name="32ff"}
+# Securing a Virtual Machine with LUKS Encryption and Best Practices on VMware: A Step-by-Step Guide 
+### Securing a Virtual Machine with LUKS Encryption and Best Practices on VMware: A Step-by-Step Guide
 
 <figure id="f6b4" class="graf graf--figure graf-after--h3">
 <img
@@ -26,7 +20,7 @@ class="graf-image" data-image-id="1*YHm2sQ2KqM__FwHHjIiRDA.png"
 data-width="1058" data-height="467" data-is-featured="true" />
 </figure>
 
-#### **INTRODUCTION** {#401f .graf .graf--h4 .graf-after--figure name="401f"}
+#### **INTRODUCTION** 
 
 This documentation provides a step-by-step guide to configuring and
 securing a virtual machine (VM) using VMware. The primary objectives are
@@ -40,17 +34,17 @@ N/B
 
 I will focus my attention on **Data Encryption**:
 
--   [In Virtual machine, use **LUKS encryption** to encrypt your VM's
-    hard disk.]{#89d9}
--   [Run: sudo cryptsetup luksFormat /dev/sda1]{#152b}
--   [Enter a passphrase to encrypt the disk.]{#1d84}
+-   In Virtual machine, use **LUKS encryption** to encrypt your VM's
+    hard disk.
+-   Run: sudo cryptsetup luksFormat /dev/sda
+-   Enter a passphrase to encrypt the disk.
 
 **I understand that creating a new virtual machine in VMWARE can now be
 done by anybody in IT.**So I will not focus much of my attention to it.
 
 **Step 1: Create a New Virtual Machine in VMware**
 
-1.  [**Open VMware**:]{#f1e2}
+1.  **Open VMware**:
 
 Launch VMware Workstation or VMware Player.
 
@@ -63,7 +57,7 @@ data-width="975" data-height="516" />
 
 **2. Create a New VM**:
 
--   [Click on **"Create a New Virtual Machine"**.]{#5547}
+-   Click on **"Create a New Virtual Machine"**.
 
 After the download create the new virtial machine.
 
@@ -74,8 +68,8 @@ class="graf-image" data-image-id="1*PFwWoDcZdWvoAhASoIpg3Q.png"
 data-width="975" data-height="498" />
 </figure>
 
--   [Select **"Custom"** (advanced) or **"Typical"** setup depending on
-    your preference.]{#1ffc}
+-   Select **"Custom"** (advanced) or **"Typical"** setup depending on
+    your preference.
 
 <figure id="56c0" class="graf graf--figure graf-after--li">
 <img
@@ -86,10 +80,10 @@ data-width="975" data-height="548" />
 
 **3. Select Installer Disc Image (ISO)**:
 
--   [Choose **"Installer disc image file (ISO)"** and locate the Ubuntu
-    ISO you downloaded.]{#5909}
--   [If you haven't downloaded it yet, get it from Kali Linux Download
-    Page]{#34c5}
+-   Choose **"Installer disc image file (ISO)"** and locate the Ubuntu
+    ISO you downloaded.
+-   If you haven't downloaded it yet, get it from Kali Linux Download
+    Page
 
 <figure id="b649" class="graf graf--figure graf-after--li">
 <img
@@ -100,10 +94,10 @@ data-width="975" data-height="199" />
 
 **4. Configure Hardware Resources**:
 
--   [**RAM**: Set at least **2 GB**.]{#d08b}
--   [**Disk Space**: Allocate at least **20 GB**.]{#d615}
--   [**Processor**: Choose 1--2 processors, depending on your machine's
-    capacity.]{#f9e1}
+-   **RAM**: Set at least **2 GB**.
+-   **Disk Space**: Allocate at least **20 GB**.
+-   **Processor**: Choose 1--2 processors, depending on your machine's
+    capacity.
 
 <figure id="b077" class="graf graf--figure graf-after--li">
 <img
@@ -114,8 +108,8 @@ data-width="975" data-height="620" />
 
 **5. Complete the VM Setup**:
 
--   [Finish the setup and power on the VM to begin the OS
-    installation.]{#01c7}
+-   Finish the setup and power on the VM to begin the OS
+    installation.
 
 We have already finish setting up and this are my operating system at
 the left bar
@@ -129,12 +123,12 @@ data-width="703" data-height="719" />
 
 **Step 2: Install and Configure KALI-LINUX on the VM**
 
-1.  [**Install KALI-LINUX**:]{#ee3e}
+1.  **Install KALI-LINUX**:
 
--   [Follow the prompts in kali-linux to complete the
-    installation.]{#b31b}
--   [Choose a strong password for the root account when setting up user
-    credentials.]{#3add}
+-   Follow the prompts in kali-linux to complete the
+    installation.
+-   Choose a strong password for the root account when setting up user
+    credentials.
 
 <figure id="5641" class="graf graf--figure graf-after--li">
 <img
@@ -150,9 +144,9 @@ Linux to improve its resilience against unauthorized access and attacks.
 
 **1. Update the System:**
 
--   [Open a terminal in your Kali VM.]{#2dfe}
--   [Run the following commands to ensure the system has the latest
-    updates and patches:]{#7456}
+-   Open a terminal in your Kali VM.
+-   Run the following commands to ensure the system has the latest
+    updates and patches:
 
 *sudo apt update && sudo apt upgrade -y*
 
@@ -177,8 +171,8 @@ were applied. This step is crucial in securing the VM
 
 **2. Set Up a Strong Firewall:**
 
--   [Kali Linux includes UFW (Uncomplicated Firewall) as a simple
-    firewall tool. To configure it:]{#9bed}
+-   Kali Linux includes UFW (Uncomplicated Firewall) as a simple
+    firewall tool. To configure it:
 
 *sudo apt install ufw -y*
 
@@ -195,7 +189,7 @@ class="graf-image" data-image-id="1*wo9GmORzDykGLdr9e0kTsA.png"
 data-width="975" data-height="88" />
 </figure>
 
--   [**Allow SSH** (if you need remote access):]{#b2ff}
+-   **Allow SSH** (if you need remote access):
 
 *sudo ufw allow ssh*
 
@@ -210,7 +204,7 @@ data-width="975" data-height="150" />
 
 **3. Configure Automatic Security Updates:**
 
--   [Install unattended-upgrades to enable automatic updates:]{#2d72}
+-   Install unattended-upgrades to enable automatic updates:
 
 *sudo apt install unattended-upgrades -y*
 
@@ -234,9 +228,9 @@ system integrity and minimizing potential security threats.
 
 **4. Enable Disk Encryption (Optional but Recommended):**
 
--   [If you want to encrypt data at rest, you can use LUKS (Linux
-    Unified Key Setup) encryption for sensitive directories.]{#37fb}
--   [To encrypt a specific directory:]{#3285}
+-   If you want to encrypt data at rest, you can use LUKS (Linux
+    Unified Key Setup) encryption for sensitive directories.
+-   To encrypt a specific directory:
 
 *sudo apt install cryptsetup*
 
@@ -247,7 +241,7 @@ class="graf-image" data-image-id="1*c44aTlW6WZDuGGBlockDcw.png"
 data-width="975" data-height="276" />
 </figure>
 
-1.  [**Choose the Directory to Encrypt**:]{#285c}
+1.  **Choose the Directory to Encrypt**:
 
 **Verify File Format:**
 
@@ -268,7 +262,7 @@ LUKS encryption is typically used with block devices like disk
 partitions or disk image files, not just any file. If you created an
 encrypted file, it should be in a specific format.
 
-1.  [**Check if the file is a valid LUKS volume**:]{#c227}
+1.  **Check if the file is a valid LUKS volume**:
 
 *sudo cryptsetup luksDump /home/kali/Pictures/*
 *encrypted_container.img*
@@ -287,7 +281,7 @@ it means the file is indeed LUKS-encrypted.
 
 If it returns an error, the file is likely not encrypted with LUKS.
 
-1.  [**If You Are Trying to Encrypt a Regular File**:]{#e8ba}
+1.  **If You Are Trying to Encrypt a Regular File**:
 
 If you're trying to encrypt a regular file (like
 encrypted_container.img), LUKS does not directly support encrypting
@@ -296,7 +290,7 @@ individual files like that.
 **Solution**: If you want to encrypt a file, you would typically create
 an encrypted container using a disk image file.
 
-1.  [**Steps to create an encrypted file container**:]{#b938}
+1.  **Steps to create an encrypted file container**:
 
 a\. **Create an empty file** (for the encrypted container):
 
@@ -391,44 +385,43 @@ the messages to help you understand what's happening:
 
 **Breakdown of the Output:**
 
-1.  [**mke2fs 1.47.1 (20-May-2024)**:\
-     This line shows the version of the mke2fs tool (part of the
+1.  **mke2fs 1.47.1 (20-May-2024)**:\
+     This line hows the version of the mke2fs tool (part of the
     e2fsprogs package) and the date it was released. This tool is
     responsible for creating ext2, ext3, and ext4 file systems in
-    Linux.]{#f381}
-2.  [**Creating filesystem with 21504 4k blocks and 21504
-    inodes**:]{#1a45}
+    Linux.
+2.  **Creating filesystem with 21504 4k blocks and 21504
+    inodes**:
 
--   [**21504 4k blocks**:\
+-   **21504 4k blocks**:\
      This means the filesystem is being created with 21,504 blocks, each
     of 4 KB (kilobytes). A "block" is the smallest unit of storage on
-    the filesystem.]{#f2df}
--   [**21504 inodes**:\
+    the filesystem.
+-   **21504 inodes**:\
      Inodes are data structures that store metadata about files, such as
     the file's owner, permissions, timestamps, and pointers to the
     file's actual data. The number 21,504 indicates the number of inodes
-    being created for this filesystem.]{#7d40}
+    being created for this filesystem.
 
-1.  [**Allocating group tables: done**:\
+1.  **Allocating group tables: done**:\
      The filesystem is divided into groups for efficient management.
     Each group has its own table to track blocks, inodes, and other
     important information. This message indicates that the group tables
-    have been successfully created.]{#f0d2}
-2.  [**Writing inode tables: done**:\
+    have been successfully created.
+2.  **Writing inode tables: done**:\
      The inode tables, which hold information about files and
     directories, have been successfully written to the disk.]{#8009}
-3.  [**Creating journal (1024 blocks): done**:\
+3.  **Creating journal (1024 blocks): done**:\
      The ext4 filesystem has a feature called a "journal," which keeps
     track of changes made to the filesystem. This ensures that if the
     system crashes, it can recover to a consistent state. The journal is
-    being created with 1024 blocks.]{#5341}
-4.  [**Writing superblocks and filesystem accounting information:
+    being created with 1024 blocks.
     done**:\
      The superblock is a key data structure in a filesystem that holds
     important information like the filesystem size, block size, free
     block count, and more. This message means the superblock and other
     related accounting information have been successfully written to the
-    disk.]{#5566}
+    disk.
 
 **Conclusion:**
 
@@ -586,10 +579,10 @@ for protection, which must be entered every time the encrypted volume is
 mounted. Encrypting sensitive data provides a strong layer of security
 by preventing unauthorized access to important files, making it a
 crucial step in protecting data at rest.
-:::
-:::
-:::
-:::
+
+
+
+
 
 By [Kiplagatkelvin](https://medium.com/@kiplagatkelvin034){.p-author
 .h-card} on [November 14, 2024](https://medium.com/p/33809ac3a8cf).

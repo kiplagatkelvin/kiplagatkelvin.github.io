@@ -1,11 +1,17 @@
-title: " Uncovering System Weaknesses: A Practical Approach to Vulnerability Scanning"
+---
+title: "Uncovering System Weaknesses: A Practical Approach to Vulnerability Scanning"
 date: 2025-02-16
 draft: false
-tags: ["Cybersecurity", "MITM Attack", "nessus", "Network Security", "ARP Spoofing", "Penetration Testing","Nmap",}]
-categories: ["Cybersecurity", "Network Security", "Penetration Testing", "Digital forensics",}
+tags: ["Cybersecurity", "MITM Attack", "Nessus", "Network Security", "ARP Spoofing", "Penetration Testing", "Nmap"]
+categories: ["Cybersecurity", "Network Security", "Penetration Testing", "Digital Forensics"]
 author: "Kelvin Kiplagat"
-summary: "A hands-on guide to perform Uncovering System Weaknesses: A Practical Approach to Vulnerability Scanning ."
+summary: "A hands-on guide to uncovering system weaknesses through vulnerability scanning, using tools like Nessus and Nmap."
 canonical_url: "https://medium.com/@kiplagatkelvin034"
+image: "/images/vulnerability-scanning-banner.jpg"
+---
+
+
+
 
 # Uncovering System Weaknesses: A Practical Approach to Vulnerability Scanning 
 
