@@ -215,16 +215,16 @@ System Information
 
 Recommendations
 
--   [Update Services: Ensure that all running services, particularly
+-   Update Services: Ensure that all running services, particularly
     vsftpd and OpenSSH, are updated to their latest versions to mitigate
-    known vulnerabilities.]{#b860}
--   [Secure Configuration: Disable Telnet and enforce the use of SSH for
-    all remote access. Ensure FTP is configured securely.]{#eeb9}
--   [Regular Scans: Conduct regular vulnerability assessments and
+    known vulnerabilities.
+-   Secure Configuration: Disable Telnet and enforce the use of SSH for
+    all remote access. Ensure FTP is configured securely.
+-   Regular Scans: Conduct regular vulnerability assessments and
     penetration tests to identify and remediate potential
-    weaknesses.]{#5513}
--   [Monitor Logs: Regularly review system logs for unusual access
-    patterns or failed login attempts, particularly for SSH.]{#1e4a}
+    weaknesses.
+-   Monitor Logs: Regularly review system logs for unusual access
+    patterns or failed login attempts, particularly for SSH.
 
 **I had to do the last essential scan which would be imperative to my
 reconnaissance:**

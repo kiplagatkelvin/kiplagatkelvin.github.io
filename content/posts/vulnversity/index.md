@@ -36,16 +36,16 @@ offensive security skills.
 To effectively follow along, having a basic understanding of the
 following is beneficial:
 
-1.  [Nmap]
+1.  Nmap
 2.  [Directory Busting (e.g., Gobuster)
-3.  [Burp Suite]
-4.  [Linux file systems, permissions, SUIDs, and environment
-    variables]
+3.  Burp Suite
+4.  Linux file systems, permissions, SUIDs, and environment
+    variables
 
 ### Objectives 
 
 1.  Perform reconnaissance to gather information about the
-    target.]{#e78e}
+    target.
 2.  Identify hidden directories on the web server.
 3   Exploit upload functionality to gain a shell on the web
     server.

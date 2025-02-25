@@ -10,7 +10,7 @@ summary: "A deep dive into analyzing network traffic using Wireshark for securit
 
 
 
-# wireshark traffic analysis {#wireshark-traffic-analysis .p-name}
+# wireshark traffic analysis 
 
 
 

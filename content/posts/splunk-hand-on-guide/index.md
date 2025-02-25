@@ -1,23 +1,17 @@
-<div>
+---
+title: "Threat Hunting with OSINT and Splunk: A Hands-on Guide"
+author: "Kiplagatkelvin"
+date: "2025-02-03"
+summary: "Learn how to use OSINT tools like Shodan and analyze security logs in Splunk to detect and mitigate cyber threats."
+categories: ["Cybersecurity", "Threat Hunting", "OSINT"]
+tags: ["OSINT", "Splunk", "Threat Hunting", "Cybersecurity", "SIEM", "Kali Linux"]
+readingTime: "8 min"
+---
 
-# Threat Hunting with OSINT and Splunk: A Hands-on Guide {#threat-hunting-with-osint-and-splunk-a-hands-on-guide .p-name}
 
-</div>
 
-::: {.section .p-summary field="subtitle"}
-Introduction
-:::
 
-::: {.section .e-content field="body"}
-::: {#cbd5 .section .section .section--body .section--first .section--last}
-::: section-divider
-
-------------------------------------------------------------------------
-:::
-
-::: section-content
-::: {.section-inner .sectionLayout--insetColumn}
-### Threat Hunting with OSINT and Splunk: A Hands-on Guide {#7673 .graf .graf--h3 .graf--leading .graf--title name="7673"}
+### Threat Hunting with OSINT and Splunk: A Hands-on Guide 
 
 <figure id="2d80" class="graf graf--figure graf-after--h3">
 <img
@@ -26,8 +20,7 @@ class="graf-image" data-image-id="1*5ED_nEsd13M1PN6zf2AtGQ.png"
 data-width="1118" data-height="571" data-is-featured="true" />
 </figure>
 
-### Introduction {#4b20 .graf .graf--h3 .graf-after--figure name="4b20"}
-
+### Introduction 
 Cyber threats continue to evolve, and organizations must stay ahead of
 attackers by using proactive security measures. One key approach is
 **threat hunting**, which involves actively searching for threats within
@@ -38,60 +31,60 @@ In this hands-on activity, we will use **Open-Source Intelligence
 **Splunk** to detect suspicious activity. This guide will walk you
 through the process using **Kali Linux**, demonstrating how to:
 
--   [Perform **OSINT reconnaissance** using **Shodan**.]{#ec19}
--   [Use **Splunk** to ingest and analyze security logs.]{#8cac}
--   [Identify **suspicious activity** based on OSINT findings.]{#ed22}
--   [Propose **mitigation strategies** to strengthen cybersecurity
-    defenses.]{#eb26}
+-   Perform **OSINT reconnaissance** using **Shodan**.
+-   Use **Splunk** to ingest and analyze security logs.
+-   Identify **suspicious activity** based on OSINT findings.
+-   Propose **mitigation strategies** to strengthen cybersecurity
+    defenses.
 
 Let's get started!
 
-### Variables Needed {#97c5 .graf .graf--h3 .graf-after--p name="97c5"}
+### Variables Needed 
 
 Before beginning, we must define key **variables** for our analysis:
 
--   [**Target IP or Device Type** --- Identify a specific IP address,
-    device type, or service to investigate.]{#2a53}
--   [**Threat Intelligence Indicators** --- Suspicious IPs, default
-    credentials, exposed services, or vulnerable systems.]{#6028}
--   [**Security Logs** --- Firewall logs, authentication logs, or
-    network traffic logs to analyze.]{#549a}
--   [**Splunk Queries** --- Search patterns to detect malicious
-    activity.]{#80f5}
+-   **Target IP or Device Type** --- Identify a specific IP address,
+    device type, or service to investigate.
+-   **Threat Intelligence Indicators** --- Suspicious IPs, default
+    credentials, exposed services, or vulnerable systems.
+-   **Security Logs** --- Firewall logs, authentication logs, or
+    network traffic logs to analyze.
+-   **Splunk Queries** --- Search patterns to detect malicious
+    activity.
 
-### Tools Used {#3117 .graf .graf--h3 .graf-after--li name="3117"}
+### Tools Used 
 
 To complete this activity, we will use the following tools:
 
-### 1. OSINT Tool: Shodan {#11ac .graf .graf--h3 .graf-after--p name="11ac"}
+### 1. OSINT Tool: Shodan
 
--   [**Shodan**
+-   **Shodan**
     ([https://www.shodan.io](https://www.shodan.io){.markup--anchor
     .markup--li-anchor data-href="https://www.shodan.io" rel="noopener"
     target="_blank"}) is a search engine that scans and indexes
-    Internet-connected devices.]{#2f62}
--   [Helps identify **exposed services, open ports, and
-    vulnerabilities**.]{#1841}
+    Internet-connected devices.
+-   Helps identify **exposed services, open ports, and
+    vulnerabilities**.
 
-### 2. Security Information and Event Management (SIEM) Tool: Splunk {#6aa8 .graf .graf--h3 .graf-after--li name="6aa8"}
+### 2. Security Information and Event Management (SIEM) Tool: Splunk 
 
--   [**Splunk** (https://www.splunk.com) is a powerful **SIEM** that
-    collects, analyzes, and visualizes security logs.]{#76d4}
--   [We will use **Splunk Free**]{#9cca}
+-   **Splunk** (https://www.splunk.com) is a powerful **SIEM** that
+    collects, analyzes, and visualizes security logs.
+-   We will use **Splunk Free**
 
 **3. Kali Linux**
 
--   [Kali Linux includes essential tools for **OSINT, penetration
-    testing, and log analysis**.]{#2a7b}
+-   Kali Linux includes essential tools for **OSINT, penetration
+    testing, and log analysis**.
 
-### Step 1: Gather Threat Intelligence Using Shodan {#53d8 .graf .graf--h3 .graf-after--li name="53d8"}
+### Step 1: Gather Threat Intelligence Using Shodan 
 
-### 1.1 Access Shodan Online {#3080 .graf .graf--h3 .graf-after--h3 name="3080"}
+### 1.1 Access Shodan Online 
 
-1.  [Open **Firefox** or any browser.]{#c09c}
-2.  [Navigate to [**Shodan.io**](https://www.shodan.io){.markup--anchor
+1.  Open **Firefox** or any browser.
+2.  Navigate to [**Shodan.io**](https://www.shodan.io){.markup--anchor
     .markup--li-anchor data-href="https://www.shodan.io" rel="noopener"
-    target="_blank"}.]{#1178}
+    target="_blank"}.
 
 <figure id="1df3" class="graf graf--figure graf-after--li">
 <img
@@ -109,11 +102,11 @@ class="graf-image" data-image-id="1*z7yez3eG62cSg6IKFNVINA.png"
 data-width="1918" data-height="901" />
 </figure>
 
-### 1.2 Perform an OSINT Search {#4681 .graf .graf--h3 .graf-after--figure name="4681"}
+### 1.2 Perform an OSINT Search 
 
 Use Shodan's search bar to look for exposed and vulnerable systems:
 
-#### **Search for SSH services on port 22**: {#f852 .graf .graf--h4 .graf-after--p name="f852"}
+#### **Search for SSH services on port 22**: 
 
 ``` {#fe03 .graf .graf--pre .graf-after--h4 .graf--preV2 code-block-mode="1" spellcheck="false" code-block-lang="makefile"}
 port:22
@@ -148,24 +141,24 @@ class="graf-image" data-image-id="1*0l-mQLct8PT9WhoRTz6aEw.png"
 data-width="1918" data-height="955" />
 </figure>
 
-#### **SSH Services on Port 22 (port:22):** {#70d9 .graf .graf--h4 .graf-after--figure name="70d9"}
+#### **SSH Services on Port 22 (port:22):** 
 
--   [**Type of Exposed Devices:** A wide variety of devices expose SSH
+-   **Type of Exposed Devices:** A wide variety of devices expose SSH
     (Secure Shell) services on port 22. This could include servers (web
     servers, database servers, file servers), routers, firewalls,
     network devices, and even embedded systems. The prevalence of SSH on
     port 22 is because it's the standard port for remote
-    administration.]{#6ace}
--   [**Potential Risks:** Exposing SSH directly to the internet carries
-    significant risks:]{#3815}
--   [**Brute-Force Attacks:** Attackers can attempt to guess usernames
-    and passwords to gain access.]{#be40}
--   [**Vulnerability Exploitation:** If the SSH server software has
+    administration.
+-   **Potential Risks:** Exposing SSH directly to the internet carries
+    significant risks:
+-   **Brute-Force Attacks:** Attackers can attempt to guess usernames
+    and passwords to gain access.
+-   **Vulnerability Exploitation:** If the SSH server software has
     known vulnerabilities, attackers can exploit them to gain
-    control.]{#793e}
--   [**Man-in-the-Middle Attacks:** If SSH is misconfigured or weak
+    control.
+-   **Man-in-the-Middle Attacks:** If SSH is misconfigured or weak
     ciphers are used, attackers might intercept communication and steal
-    credentials or manipulate data.]{#8aa9}
+    credentials or manipulate data.
 
 **How Attackers Could Exploit These Systems:**
 
@@ -181,7 +174,7 @@ ransomware or backdoors, to maintain persistence or disrupt operations.
 **Denial-of-Service (DoS) Attacks:** Compromised systems can be used as
 part of a botnet for DDoS attacks.
 
--   [**Find devices with default passwords**:]{#620e}
+-   **Find devices with default passwords**:
 
 i was curious to check devices with default password.
 
@@ -212,7 +205,7 @@ class="graf-image" data-image-id="1*5XDWNBDToBCUcCYPyM0j5A.png"
 data-width="1908" data-height="781" />
 </figure>
 
-#### **Devices with Default Passwords (default password):** {#0bb9 .graf .graf--h4 .graf-after--figure name="0bb9"}
+#### **Devices with Default Passwords (default password):** 
 
 **Type of Exposed Devices:** Devices using default passwords are often
 IoT devices (routers, cameras, smart home devices), embedded systems,
@@ -223,7 +216,7 @@ of security updates and configuration.
 Attackers can easily find default credentials online or use automated
 tools to scan for devices with these weaknesses.
 
-#### **How Attackers Could Exploit These Systems:** {#fcbe .graf .graf--h4 .graf-after--p name="fcbe"}
+#### **How Attackers Could Exploit These Systems:** 
 
 **Easy Access:** Default credentials provide trivial access to the
 device, bypassing any other security measures.
@@ -237,7 +230,7 @@ access it.
 **Network Compromise:** A compromised device on the network can be a
 stepping stone to other, more critical systems.
 
-#### **Identify vulnerable Apache servers**: {#1991 .graf .graf--h4 .graf-after--p name="1991"}
+#### **Identify vulnerable Apache servers**: 
 
 ``` {#9957 .graf .graf--pre .graf-after--h4 .graf--preV2 code-block-mode="1" spellcheck="false" code-block-lang="makefile"}
 product:apache httpd
@@ -259,7 +252,7 @@ class="graf-image" data-image-id="1*cZzMkvSmgX2CsXVRwngz9Q.png"
 data-width="1911" data-height="931" />
 </figure>
 
-### **Vulnerable Apache Servers (product:apache httpd):** {#e9ff .graf .graf--h3 .graf-after--figure name="e9ff"}
+### **Vulnerable Apache Servers (product:apache httpd):** 
 
 **Type of Exposed Devices:** Web servers running the Apache HTTPD
 software.
@@ -268,7 +261,7 @@ software.
 vulnerabilities. These vulnerabilities can range from information
 disclosure to remote code execution.
 
-#### **How Attackers Could Exploit These Systems:** {#fb61 .graf .graf--h4 .graf-after--p name="fb61"}
+#### **How Attackers Could Exploit These Systems:** 
 
 **Remote Code Execution (RCE):** The most severe vulnerabilities allow
 attackers to execute arbitrary code on the server, potentially giving
@@ -277,25 +270,25 @@ them complete control.
 **Local File Inclusion (LFI):** Attackers might be able to read
 sensitive files on the server.
 
--   [**Cross-Site Scripting (XSS):** Attackers can inject malicious
+-   **Cross-Site Scripting (XSS):** Attackers can inject malicious
     scripts into web pages served by the vulnerable Apache server,
-    potentially targeting users.]{#ef28}
--   [**Denial-of-Service (DoS):** Exploits might cause the server to
-    crash or become unavailable.]{#9cef}
+    potentially targeting users.
+-   **Denial-of-Service (DoS):** Exploits might cause the server to
+    crash or become unavailable.
 
-### Step 2: Collect and Analyze Data Using Splunk {#f6ca .graf .graf--h3 .graf-after--li name="f6ca"}
+### Step 2: Collect and Analyze Data Using Splunk 
 
-### 2.1 Install or Access Splunk {#6e09 .graf .graf--h3 .graf-after--h3 name="6e09"}
+### 2.1 Install or Access Splunk 
 
-#### Option 1: Install Splunk Free on Kali Linux {#b1a0 .graf .graf--h4 .graf-after--h3 name="b1a0"}
+#### Option 1: Install Splunk Free on Kali Linux 
 
-1.  [Download Splunk from [Splunk
+1.  Download Splunk from [Splunk
     Download](https://www.splunk.com/en_us/download/splunk-enterprise.html){.markup--anchor
     .markup--li-anchor
     data-href="https://www.splunk.com/en_us/download/splunk-enterprise.html"
-    rel="noopener" target="_blank"}.]{#a4af}
+    rel="noopener" target="_blank"}.
 
-### Breakdown of the Command: {#2f94 .graf .graf--h3 .graf-after--li name="2f94"}
+### Breakdown of the Command: 
 
 ``` {#4e23 .graf .graf--pre .graf-after--h3 .graf--preV2 code-block-mode="1" spellcheck="false" code-block-lang="bash"}
 wget -O splunk.deb "https://download.splunk.com/products/splunk/releases/latest/linux/splunk-latest-linux-2.6-amd64.deb"
@@ -363,10 +356,10 @@ class="graf-image" data-image-id="1*uUCMtU2gmtWWRMG421_3Ww.png"
 data-width="1918" data-height="981" />
 </figure>
 
-### 2.2 Ingest Security Logs into Splunk {#980c .graf .graf--h3 .graf-after--figure name="980c"}
+### 2.2 Ingest Security Logs into Splunk 
 
--   [Collect logs from **firewall, authentication, or network
-    traffic**:]{#70b7}
+-   Collect logs from **firewall, authentication, or network
+    traffic**:
 
 ``` {#4f41 .graf .graf--pre .graf-after--li .graf--preV2 code-block-mode="1" spellcheck="false" code-block-lang="bash"}
 sudo tail -f /var/log/auth.log sudo cat /var/log/syslog && sudo tcpdump -i eth0 -w capture.pcap
@@ -381,7 +374,7 @@ class="graf-image" data-image-id="1*ICEcpY76GwgGe2qjfG2B_Q.png"
 data-width="1917" data-height="451" />
 </figure>
 
-#### Monitor `/var/log/auth.log`{.markup--code .markup--h4-code} with `tail -f`{.markup--code .markup--h4-code}: {#e26a .graf .graf--h4 .graf-after--figure name="e26a"}
+#### Monitor `/var/log/auth.log`{.markup--code .markup--h4-code} with `tail -f`
 
 ``` {#f2d9 .graf .graf--pre .graf-after--h4 .graf--preV2 code-block-mode="1" spellcheck="false" code-block-lang="bash"}
 sudo tail -f /var/log/auth.log
@@ -398,7 +391,7 @@ This will continuously display the last few lines of
 `/var/log/auth.log`{.markup--code .markup--p-code} and update the output
 as new entries are added.
 
-#### Collect logs from a network or endpoints {#18e3 .graf .graf--h4 .graf-after--p name="18e3"}
+#### Collect logs from a network or endpoints
 
 Ingest Security Logs:
 
@@ -408,7 +401,7 @@ sudo cat /var/log/syslog         # View system logs
 sudo tcpdump -i eth0 -w capture.pcap   # Capture network traffic
 ```
 
--   [Upload logs into **Splunk**.]{#c340}
+-   Upload logs into **Splunk**.
 
 to ingest data to splunk the data we had earlier on generated we go
 **setting** and then **data input** then **Choose the Data Type**:
@@ -420,12 +413,12 @@ class="graf-image" data-image-id="1*Wqxc9PA8j0QPmT_ItazSAA.png"
 data-width="1917" data-height="856" />
 </figure>
 
--   [Select the type of input you want to configure. For example, if
+-   Select the type of input you want to configure. For example, if
     you're uploading a log file from your local machine, choose **Files
-    & Directories**.]{#bbb5}
--   [If you're collecting logs directly from a network or a server, you
+    & Directories**.
+-   If you're collecting logs directly from a network or a server, you
     can choose other inputs like **TCP/UDP** or **HTTP Event
-    Collector**.]{#9ba1}
+    Collector**.
 
 **below image display adding data.**
 
@@ -436,13 +429,13 @@ class="graf-image" data-image-id="1*twaD1zs-DGqpVQZdV9eONQ.png"
 data-width="1906" data-height="676" />
 </figure>
 
-### 2.3 Hunt for Suspicious Activity {#470c .graf .graf--h3 .graf-after--figure name="470c"}
+### 2.3 Hunt for Suspicious Activity 
 
 Use Splunk to analyze security logs and detect threats:
 
--   [Go to **Search & Reporting**.]{#e16c}
--   [Run a search query to verify the logs are ingested]{#9cb8}
--   [**Find failed SSH login attempts**:]{#ef34}
+-   Go to **Search & Reporting**.
+-   Run a search query to verify the logs are ingested
+-   **Find failed SSH login attempts**:
 
 ``` {#4493 .graf .graf--pre .graf-after--li .graf--preV2 code-block-mode="1" spellcheck="false" code-block-lang="ini"}
 index=auth | search "Failed password"
@@ -468,11 +461,11 @@ class="graf-image" data-image-id="1*y6KBwuyXgnfgeG3bFcD7Dg.png"
 data-width="1912" data-height="787" />
 </figure>
 
-### Step 3: Mitigation and Remediation {#b1ac .graf .graf--h3 .graf-after--figure name="b1ac"}
+### Step 3: Mitigation and Remediation 
 
-### 3.1 Mitigation Steps {#c2e2 .graf .graf--h3 .graf-after--h3 name="c2e2"}
+### 3.1 Mitigation Steps 
 
-1.  [**Block malicious IPs** using iptables:]{#c303}
+1.  **Block malicious IPs** using iptables:
 
 ``` {#d696 .graf .graf--pre .graf-after--li .graf--preV2 code-block-mode="1" spellcheck="false" code-block-lang="css"}
 sudo iptables -A INPUT -s <malicious_ip> -j DROP
@@ -495,7 +488,7 @@ dropped** because:
 ✅ **Packets (pkts) and bytes (bytes) count is 0** --- This means the
 blocked IP **hasn't tried to connect yet**
 
-**2. Update security patches**:
+**2. Update security patches**
 
 ``` {#d01f .graf .graf--pre .graf-after--p .graf--preV2 code-block-mode="1" spellcheck="false" code-block-lang="sql"}
 sudo apt update && sudo apt upgrade -y
@@ -530,16 +523,16 @@ Always **pick a port above 1024** (e.g., `2200`{.markup--code
 `2525`{.markup--code .markup--p-code}) to avoid conflicts with system
 services.
 
--   [Locate this line:]{#ce3a}
+-   Locate this line:
 
 ``` {#d331 .graf .graf--pre .graf-after--li .graf--preV2 code-block-mode="1" spellcheck="false" code-block-lang="bash"}
 #Port 22
 ```
 
--   [Remove the `#`{.markup--code .markup--li-code} and change
+-   Remove the `#`{.markup--code .markup--li-code} and change
     `22`{.markup--code .markup--li-code} to a custom port (e.g.,
     `2200`{.markup--code .markup--li-code} or any unused port above
-    `1024`{.markup--code .markup--li-code}).]{#01ba}
+    `1024`{.markup--code .markup--li-code}).
 
 ``` {#32ef .graf .graf--pre .graf-after--li .graf--preV2 code-block-mode="1" spellcheck="false" code-block-lang="yaml"}
 plaintext Port 2200
@@ -552,7 +545,7 @@ class="graf-image" data-image-id="1*gv7PxiQv6VNwt9oVbseJUQ.png"
 data-width="1740" data-height="931" />
 </figure>
 
-### Conclusion {#963e .graf .graf--h3 .graf-after--figure name="963e"}
+### Conclusion
 
 This hands-on activity demonstrates the importance of combining **OSINT
 and SIEM tools** to detect cyber threats. By using **Shodan** for
@@ -561,10 +554,9 @@ potential security risks and implement measures to mitigate them.
 
 Would you like to see more in-depth **Splunk queries** or additional
 **OSINT tools**? Let me know in the comments! 🚀
-:::
-:::
-:::
-:::
+
+
+
 
 By [Kiplagatkelvin](https://medium.com/@kiplagatkelvin034){.p-author
 .h-card} on [February 3, 2025](https://medium.com/p/13907a7e2765).

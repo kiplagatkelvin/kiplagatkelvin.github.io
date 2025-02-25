@@ -49,8 +49,8 @@ measures, especially encryption.
 
 This guide covers three key stages in the on-path attack:
 
-1.  [Launching Ettercap and exploring its capabilities.]{#b20c}
-2.  [Performing an on-path attack using ARP spoofing.]{#9c94}
+1.  Launching Ettercap and exploring its capabilities.
+2.  Performing an on-path attack using ARP spoofing.
 
 3.Using Wireshark to monitor and analyze the ARP spoofing process.
 
@@ -65,7 +65,7 @@ data-width="720" data-height="371" />
 
 Attached is the topology I will be using for illustration.
 
-### Part 1: Launch Ettercap and Explore Its Capabilities {#a317 .graf .graf--h3 .graf-after--p name="a317"}
+### Part 1: Launch Ettercap and Explore Its Capabilities 
 
 In this attack, you will use ARP spoofing to redirect traffic on the
 local virtual network to your Kali Linux system at 10.6.6.1. ARP
@@ -75,13 +75,13 @@ your lab environment uses an internal virtual network, instead of
 spoofing the default gateway, you will use ARP spoofing to redirect
 traffic that is destined for a local server with the address 10.6.6.13.
 
-1.  [Load Kali Linux using the username kali and the password kali. Open
+1.  Load Kali Linux using the username kali and the password kali. Open
     a terminal session from the menu bar at the top of the
-    screen.]{#527f}
-2.  [The target host in this lab is the Linux device at 10.6.6.23. To
+    screen.
+2.  The target host in this lab is the Linux device at 10.6.6.23. To
     view the network from the target perspective, and initiate traffic
     between the target and the server, use *SSH* to log in to this host.
-    The username is labuser and the password is *Cisco123.*]{#4cbd}
+    The username is labuser and the password is *Cisco123.*
 
 The user of the *10.6.6.23* host is communicating with the server at
 *10.6.6.13*. The on-path attacker at *10.6.6.1* (your Kali VM) will
@@ -116,13 +116,13 @@ class="graf-image" data-image-id="1*3UyThYuhpZVcsNZB4fqJCA.png"
 data-width="621" data-height="241" />
 </figure>
 
-#### Step 2: Load Ettercap GUI interface to begin scanning. {#b626 .graf .graf--h4 .graf-after--figure name="b626"}
+#### Step 2: Load Ettercap GUI interface to begin scanning.
 
-1.  [Open a new terminal session from the menu bar in Kali Linux. Do not
+1.  Open a new terminal session from the menu bar in Kali Linux. Do not
     close the SSH-terminal that is running the session with
-    10.6.6.23.]{#631e}
-2.  [Use the **ettercap -h** command to view the help file for the
-    Ettercap application.]{#eeab}
+    10.6.6.23.
+2.  Use the **ettercap -h** command to view the help file for the
+    Ettercap application.
 
 *(kali㉿Kali)-\[\~\]\
 \$ ettercap -h*
@@ -149,12 +149,12 @@ class="graf-image" data-image-id="1*PuJHhzRryEr0tDCiDxJ0bw.png"
 data-width="961" data-height="625" />
 </figure>
 
-1.  [The Ettercap GUI opens in a new window. You are sniffing traffic on
+1.  The Ettercap GUI opens in a new window. You are sniffing traffic on
     an internal, virtual network. The default setup is to scan using
     interface eth0. Change the sniffing interface to **br-internal**,
     which is the interface that is configured on the 10.6.6.0/24 virtual
     network, by changing the value in the **Setup \> Primary**
-    **Interface** dropdown.]{#1ee6}
+    **Interface** dropdown.
 
 <figure id="9847" class="graf graf--figure graf-after--li">
 <img
@@ -167,15 +167,15 @@ data-width="822" data-height="493" />
 to continue. A message appears at the bottom of the screen indicating
 that Unified sniffing has started.
 
-### Part 2: Perform the On-Path (MITM) Attack {#c545 .graf .graf--h3 .graf-after--p name="c545"}
+### Part 2: Perform the On-Path (MITM) Attack 
 
-### Step 1: Select the Target Devices. {#7cb4 .graf .graf--h3 .graf-after--h3 name="7cb4"}
+### Step 1: Select the Target Devices. 
 
-1.  [In the Ettercap GUI window, open the Hosts List window by clicking
+1.  In the Ettercap GUI window, open the Hosts List window by clicking
     the Ettercap menu (three dots icon). Select the Hosts entry and then
     Hosts List. Click the Scan for Hosts icon (magnifying glass) at top
     left in the menu bar. A list of the hosts that were discovered on
-    the 10.6.6.0/24 network appears in the Host List window.]{#53dd}
+    the 10.6.6.0/24 network appears in the Host List window.
 
 <figure id="a504" class="graf graf--figure graf-after--li">
 <img
@@ -186,10 +186,10 @@ data-width="816" data-height="462" />
 
 ***At least one of the MAC addresses should be familiar.***
 
-1.  [Define the source and destination devices for the attack. To do so,
+1.  Define the source and destination devices for the attack. To do so,
     click the IP address 10.6.6.23 in the window to highlight the target
     user host. Click the Add to Target 1 button at the bottom of the
-    Host List window. This defines the user's host as Target 1.]{#122d}
+    Host List window. This defines the user's host as Target 1.
 
 <figure id="6fc5" class="graf graf--figure graf-after--li">
 <img
@@ -215,9 +215,9 @@ this lab, the attacking computer is the Kali Linux machine at 10.6.6.1.
 All other computers on the subnet, other than the targets, will
 communicate normally.
 
-1.  [Click the MITM icon on the menu bar (the first circular icon on top
+1.  Click the MITM icon on the menu bar (the first circular icon on top
     right). Select **ARP Poisoning**... from the dropdown menu. Verify
-    that **Sniff remote connections** is selected. Click OK.]{#c54b}
+    that **Sniff remote connections** is selected. Click OK.
 
 <figure id="3161" class="graf graf--figure graf-after--li">
 <img
@@ -247,11 +247,11 @@ class="graf-image" data-image-id="1*cZ1fpNvBXhGp7cxwtBXHOg.png"
 data-width="823" data-height="208" />
 </figure>
 
-### Step 2: Perform the ARP spoofing attack. {#086d .graf .graf--h3 .graf-after--figure name="086d"}
+### Step 2: Perform the ARP spoofing attack. 
 
-1.  [Return to the terminal window that is running the SSH session with
+1.  Return to the terminal window that is running the SSH session with
     the target user host at 10.6.6.23. Repeat the ping to
-    10.6.6.13]{#c800}
+    10.6.6.13
 
 *labusergravemind:/\$ ping -c 5 10.6.6.13*
 
@@ -345,65 +345,65 @@ data-width="637" data-height="448" />
 
 ### Explanation:
 
-1.  [**`sudo`{.markup--code .markup--li-code}**:Executes the command
+1.  **`sudo`{.markup--code .markup--li-code}**:Executes the command
     with root privileges (required for Ettercap to function properly,
-    especially when working with network interfaces).]{#1542}
-2.  [**`ettercap`{.markup--code .markup--li-code}**:This is the name of
+    especially when working with network interfaces).
+2.  **`ettercap`{.markup--code .markup--li-code}**:This is the name of
     the tool used for network sniffing and man-in-the-middle (MITM)
-    attacks, including ARP poisoning.]{#65c4}
-3.  [**`-T`{.markup--code .markup--li-code}**:Specifies the **Text
+    attacks, including ARP poisoning.
+3.  **`-T`{.markup--code .markup--li-code}**:Specifies the **Text
     mode**. This mode runs Ettercap in a terminal with text-based output
-    instead of the graphical interface.]{#812e}
-4.  [**`-q`{.markup--code .markup--li-code}**:Enables **Quiet mode**,
+    instead of the graphical interface.
+4.  **`-q`{.markup--code .markup--li-code}**:Enables **Quiet mode**,
     meaning Ettercap will suppress unnecessary output, showing only
-    essential information.]{#3e0f}
-5.  [**`-i br-internal`{.markup--code .markup--li-code}**:Specifies the
+    essential information.
+5.  **`-i br-internal`{.markup--code .markup--li-code}**:Specifies the
     **network interface** to use for the attack. In this case,
     `br-internal`{.markup--code .markup--li-code} is likely a network
     bridge interface, which is common in virtualized environments or
     when using tools like Docker or VirtualBox. This is the interface
-    through which the attack will operate.]{#21dc}
-6.  [**`--write mitm-saved.pcap`{.markup--code .markup--li-code}**:Tells
+    through which the attack will operate.
+6.  **`--write mitm-saved.pcap`{.markup--code .markup--li-code}**:Tells
     Ettercap to **save** the captured traffic into a file called
     `mitm-saved.pcap`{.markup--code .markup--li-code}. This is useful
     for later analysis of the network traffic that was
-    intercepted.]{#f31b}
-7.  [**`--mitm arp`{.markup--code .markup--li-code}**:This specifies the
+    intercepted.
+7.  **`--mitm arp`{.markup--code .markup--li-code}**:This specifies the
     type of **man-in-the-middle attack** to use, which in this case is
     **ARP poisoning (ARP spoofing)**. It allows the attacker to
     intercept and possibly alter the communication between two devices
-    by poisoning the ARP cache of both devices.]
-8.  [**`/10.6.6.23//`{.markup--code .markup--li-code}** and
+    by poisoning the ARP cache of both devices.
+8.  **`/10.6.6.23//`{.markup--code .markup--li-code}** and
     **`/10.6.6.13//`{.markup--code .markup--li-code}**:These are the
     **target IP addresses** of the two devices involved in the ARP
     spoofing attack. The syntax `/IP_ADDRESS//`{.markup--code
     .markup--li-code} is used by Ettercap to specify the target
-    IPs.]
+    IPs.
 
--   [`10.6.6.23`{.markup--code .markup--li-code} is the victim device's
-    IP (the one you want to intercept traffic from).]
--   [`10.6.6.13`{.markup--code .markup--li-code} is the device you want
-    to manipulate or monitor (the target device).]
+-   `10.6.6.23`{.markup--code .markup--li-code} is the victim device's
+    IP (the one you want to intercept traffic from).
+-   `10.6.6.13`{.markup--code .markup--li-code} is the device you want
+    to manipulate or monitor (the target device)
 
-#### What this command does: {#395f .graf .graf--h4 .graf-after--li name="395f"}
+#### What this command does:
 
--   [The command starts an **ARP poisoning attack** on the network
+-   The command starts an **ARP poisoning attack** on the network
     interface `br-internal`{.markup--code .markup--li-code}, between the
     devices with IP addresses `10.6.6.23`{.markup--code
     .markup--li-code} and `10.6.6.13`{.markup--code
-    .markup--li-code}.]
--   [It intercepts the communication between these two devices and saves
+    .markup--li-code}.
+-   It intercepts the communication between these two devices and saves
     the network traffic in a file called `mitm-saved.pcap`{.markup--code
-    .markup--li-code}.]
--   [During the attack, Ettercap manipulates the ARP tables of both
+    .markup--li-code}.
+-   During the attack, Ettercap manipulates the ARP tables of both
     devices to route their traffic through the attacker's machine,
     enabling the attacker to inspect, manipulate, or inject packets into
-    the communication stream.]
+    the communication stream.
 
 ### Step 2: Open Wireshark to view the Saved PCAP file.
 
-1.  [In the Kali terminal window, start Wireshark with the
-    **mitm-saved.pcap** file that you created with Ettercap.]{#e06f}
+1.  In the Kali terminal window, start Wireshark with the
+    **mitm-saved.pcap** file that you created with Ettercap.
 
 ***wireshark mitm-saved.pcap***
 

@@ -31,29 +31,29 @@ transactions.
 
 **Key Components of PKI:**
 
--   [**Public and Private Keys**: Asymmetric keys used for secure
-    communication and authentication.]{#f165}
--   [**Digital Certificates**: Electronic documents issued by CAs that
-    confirm a user's identity and contain the public key.]{#d94f}
--   [**Certificate Authorities (CAs)**: Trusted entities responsible for
-    issuing and managing certificates.]{#1b4f}
+-   **Public and Private Keys**: Asymmetric keys used for secure
+    communication and authentication.
+-   **Digital Certificates**: Electronic documents issued by CAs that
+    confirm a user's identity and contain the public key.
+-   **Certificate Authorities (CAs)**: Trusted entities responsible for
+    issuing and managing certificates.
 
 **Certificate Management** involves overseeing the entire lifecycle of a
 digital certificate, including:
 
-1.  [**Issuance**: Creating and validating certificates through
-    CAs.]{#980b}
-2.  [**Deployment**: Installing certificates on servers to enable secure
-    connections.]{#7750}
-3.  [**Renewal and Expiration**: Tracking and renewing certificates
-    before they expire.]{#1531}
-4.  [**Revocation**: Invalidating compromised certificates and updating
-    users through Certificate Revocation Lists (CRLs).]{#2dc1}
-5.  [**Auditing**: Regularly reviewing certificate usage to ensure
+1.  **Issuance**: Creating and validating certificates through
+    CAs.
+2.  **Deployment**: Installing certificates on servers to enable secure
+    connections.
+3.  **Renewal and Expiration**: Tracking and renewing certificates
+    before they expire.
+4.  **Revocation**: Invalidating compromised certificates and updating
+    users through Certificate Revocation Lists (CRLs).
+5.  **Auditing**: Regularly reviewing certificate usage to ensure
     compliance with security policies.**symmetric and asymmetric
-    encryption**]{#1a9d}
+    encryption**
 
-#### 1. Symmetric Encryption {#34fd .graf .graf--h4 .graf-after--li name="34fd"}
+#### 1. Symmetric Encryption 
 
 In symmetric encryption, the **same key** is used for both encryption
 and decryption. This type of encryption is typically fast and suitable
@@ -61,10 +61,10 @@ for large data sets but requires secure key distribution.
 
 **Process**:
 
-1.  [The sender encrypts the message using a **shared secret
-    key**.]{#f018}
-2.  [The encrypted message is sent to the receiver.]{#81fe}
-3.  [The receiver decrypts the message using the **same key**.]{#e57e}
+1.  The sender encrypts the message using a **shared secret
+    key**.
+2.  The encrypted message is sent to the receiver.
+3.  The receiver decrypts the message using the **same key**.
 
 <figure id="f758" class="graf graf--figure graf-after--li">
 <img
@@ -76,7 +76,7 @@ data-width="304" data-height="166" />
 **Key Challenge**: Securely sharing the symmetric key between sender and
 receiver.
 
-### 2. Asymmetric Encryption {#bba4 .graf .graf--h3 .graf-after--p name="bba4"}
+### 2. Asymmetric Encryption 
 
 In asymmetric encryption, two different but mathematically related keys
 are used: a **public key** for encryption and a **private key** for
@@ -85,11 +85,11 @@ kept secret.
 
 **Process**:
 
-1.  [The sender encrypts the message using the **recipient's public
-    key**.]{#5198}
-2.  [The encrypted message is sent to the receiver.]{#e363}
-3.  [The receiver decrypts the message using their **private
-    key**.]{#dfcb}
+1.  The sender encrypts the message using the **recipient's public
+    key**.
+2.  The encrypted message is sent to the receiver.
+3.  The receiver decrypts the message using their **private
+    key**.
 
 <figure id="dc8a" class="graf graf--figure graf-after--li">
 <img
@@ -105,12 +105,10 @@ Both methods are crucial in cybersecurity, with **symmetric encryption**
 being efficient for bulk data encryption and **asymmetric encryption**
 providing secure key exchanges and digital signatures.
 
-### Proof of concepts: {#bd2c .graf .graf--h3 .graf-after--p name="bd2c"}
+### Proof of concepts: 
 
-#### symmetrical Encryption using openSSL {#5286 .graf .graf--h4 .graf-after--h3 name="5286"}
-
-#### Step 1: Generate a Symmetric Key {#8614 .graf .graf--h4 .graf-after--h4 name="8614"}
-
+#### symmetrical Encryption using openSSL 
+#### Step 1: Generate a Symmetric Key 
 For symmetric encryption with OpenSSL, we can use a passphrase as a key
 instead of generating a separate key file.
 
@@ -123,9 +121,9 @@ class="graf-image" data-image-id="1*fEe55dY4iPdZJ_z09QV3JQ.png"
 data-width="1723" data-height="933" />
 </figure>
 
-### Step 2: Encrypt a Message with a Symmetric Key {#ba63 .graf .graf--h3 .graf-after--figure name="ba63"}
+### Step 2: Encrypt a Message with a Symmetric Key
 
-1.  [**Create a Plaintext File**:]{#9421}
+1.  **Create a Plaintext File**:
 
 Let's start by creating a sample plaintext file. Run the following
 command to create it:
@@ -164,23 +162,23 @@ This command encrypts a file named `plaintext.txt`{.markup--code
 
 Here's a breakdown of the options used:
 
--   [**`-aes-256-cbc`{.markup--code .markup--li-code}**: Specifies the
-    encryption algorithm (AES-256-CBC).]{#2722}
--   [**`-md sha512`{.markup--code .markup--li-code}**: Uses SHA-512 as
-    the message digest algorithm for key derivation.]{#584e}
--   [**`-pbkdf2`{.markup--code .markup--li-code}**: Employs the
+-   **`-aes-256-cbc`{.markup--code .markup--li-code}**: Specifies the
+    encryption algorithm (AES-256-CBC).
+-   **`-md sha512`{.markup--code .markup--li-code}**: Uses SHA-512 as
+    the message digest algorithm for key derivation.
+-   **`-pbkdf2`{.markup--code .markup--li-code}**: Employs the
     Password-Based Key Derivation Function 2 (PBKDF2) to derive a
-    cryptographic key from the user-provided passphrase.]{#7a9f}
--   [**`-iter 1000`{.markup--code .markup--li-code}**: Sets the number
+    cryptographic key from the user-provided passphrase.
+-   **`-iter 1000`{.markup--code .markup--li-code}**: Sets the number
     of iterations for the PBKDF2 algorithm. A higher iteration count
-    increases the security of the derived key.]{#fd43}
--   [**`-salt`{.markup--code .markup--li-code}**: Adds a random salt to
+    increases the security of the derived key.
+-   **`-salt`{.markup--code .markup--li-code}**: Adds a random salt to
     the encryption process, making it more resistant to dictionary
-    attacks.]{#56cd}
--   [**`-in plaintext.txt`{.markup--code .markup--li-code}**: Specifies
-    the input file to be encrypted.]{#2f3e}
--   [**`-out message.enc`{.markup--code .markup--li-code}**: Specifies
-    the output file containing the encrypted data.]{#1411}
+    attacks.
+-   **`-in plaintext.txt`{.markup--code .markup--li-code}**: Specifies
+    the input file to be encrypted.
+-   **`-out message.enc`{.markup--code .markup--li-code}**: Specifies
+    the output file containing the encrypted data.
 
 The encrypted output is saved as `message.enc`{.markup--code
 .markup--p-code}. You will be prompted to enter a password, which is
@@ -193,7 +191,7 @@ class="graf-image" data-image-id="1*AoDK8KZmN0rVYXBAitcODQ.png"
 data-width="1722" data-height="367" />
 </figure>
 
-### Step 3: Decrypt the Message with the Same Symmetric Key {#7e0a .graf .graf--h3 .graf-after--figure name="7e0a"}
+### Step 3: Decrypt the Message with the Same Symmetric Key 
 
 To decrypt the message, we use the same command but with the
 `-d`{.markup--code .markup--p-code} (decrypt) option:
@@ -210,10 +208,10 @@ data-width="1575" data-height="100" />
 
 **Explanation**:
 
--   [`-d`{.markup--code .markup--li-code} tells OpenSSL to
-    decrypt.]{#a740}
--   [The rest of the parameters are similar to encryption but with the
-    output going to *plaintext.txt*]{#df52}
+-   `-d`{.markup--code .markup--li-code} tells OpenSSL to
+    decrypt.
+-   The rest of the parameters are similar to encryption but with the
+    output going to *plaintext.txt*
 
 When you run this command, OpenSSL prompts you to enter the password
 that was used during encryption. Upon entering the correct password,
@@ -229,24 +227,23 @@ class="graf-image" data-image-id="1*LCTaFcLEvZl_BG94McKqew.png"
 data-width="1282" data-height="109" />
 </figure>
 
-### **Asymmetrical encryption using openSSL** {#f3bb .graf .graf--h3 .graf-after--figure name="f3bb"}
+### **Asymmetrical encryption using openSSL** 
 
 **Asymmetric encryption** example using **OpenSSL**. In asymmetric
 encryption, we use a pair of keys: a **public key** to encrypt data and
 a **private key** to decrypt it. This is useful for scenarios like
 secure message exchanges, SSL/TLS, and digital signatures.
 
-#### Steps for Asymmetric Encryption Using OpenSSL {#8952 .graf .graf--h4 .graf-after--p name="8952"}
+#### Steps for Asymmetric Encryption Using OpenSSL 
 
 We'll go through generating a key pair, encrypting a message with the
 public key, and decrypting it with the private key.
 
-#### Step 1: Generate a Private Key {#3e05 .graf .graf--h4 .graf-after--p name="3e05"}
-
-1.  [**Generate an RSA Private Key**:]{#c421}
-2.  [Run the following command to create a 2048-bit RSA private key
+#### Step 1: Generate a Private Key 
+1.  **Generate an RSA Private Key**:
+2.  Run the following command to create a 2048-bit RSA private key
     (saved as `private_key.pem`{.markup--code
-    .markup--li-code}):]{#f24d}
+    .markup--li-code})
 
 *`openssl genpkey -algorithm RSA -out private_key.pem -aes256`{.markup--code
 .markup--p-code}*
@@ -274,9 +271,9 @@ class="graf-image" data-image-id="1*HkaqaJahkyLQI_P0FexALA.png"
 data-width="1714" data-height="799" />
 </figure>
 
-### Step 2: Extract the Public Key from the Private Key {#919a .graf .graf--h3 .graf-after--figure name="919a"}
+### Step 2: Extract the Public Key from the Private Key 
 
-1.  [**Generate a Public Key**:]{#69d8}
+1.  **Generate a Public Key**:
 
 Using the private key, extract the public key
 
@@ -305,9 +302,8 @@ class="graf-image" data-image-id="1*ljMsPLkpfHLBOD_-e9Evjw.png"
 data-width="1708" data-height="376" />
 </figure>
 
-### **Step 3: Encrypt a Message Using the Public Key** {#d04d .graf .graf--h3 .graf-after--figure name="d04d"}
-
-1.  [**Create a Plaintext File**:]{#c395}
+### **Step 3: Encrypt a Message Using the Public Key** {
+1.  **Create a Plaintext File**:
 
 Let's create a plaintext file to encrypt:
 
@@ -328,37 +324,28 @@ Use the public key to encrypt the message
 *openssl pkeyutl -encrypt -pubin -inkey public_key.pem -in message.txt
 -out encrypted_message.bin*
 
-### Explanation: {#6f85 .graf .graf--h3 .graf-after--p name="6f85"}
+### Explanation: 
 
--   [**`openssl`{.markup--code .markup--li-code}**: Command-line tool
-    for OpenSSL, used for cryptographic operations.]{#eec9}
--   [**`pkeyutl`{.markup--code .markup--li-code}**: Utility for
-    performing operations using public/private keys.]{#e469}
--   [**`-encrypt`{.markup--code .markup--li-code}**: Indicates that you
-    are encrypting data.]{#a55e}
--   [**`-pubin`{.markup--code .markup--li-code}**: Specifies that the
-    input key is a public key.]{#9b01}
--   [**`-inkey public_key.pem`{.markup--code .markup--li-code}**: The
-    file containing the public key used for encryption.]{#9c23}
--   [**`-in message.txt`{.markup--code .markup--li-code}**: The
-    plaintext file containing the message you want to encrypt.]{#e6c3}
--   [**`-out encrypted_message.bin`{.markup--code .markup--li-code}**:
-    The file where the encrypted message will be saved.]{#7337}
-:::
-:::
-:::
+-   **`openssl`{.markup--code .markup--li-code}**: Command-line tool
+    for OpenSSL, used for cryptographic operations.
+-   **`pkeyutl`{.markup--code .markup--li-code}**: Utility for
+    performing operations using public/private keys.
+-   **`-encrypt`{.markup--code .markup--li-code}**: Indicates that you
+    are encrypting data.
+-   **`-pubin`{.markup--code .markup--li-code}**: Specifies that the
+    input key is a public key.
+-   **`-inkey public_key.pem`{.markup--code .markup--li-code}**: The
+    file containing the public key used for encryption.
+-   **`-in message.txt`{.markup--code .markup--li-code}**: The
+    plaintext file containing the message you want to encrypt.
+-   **`-out encrypted_message.bin`{.markup--code .markup--li-code}**:
+    The file where the encrypted message will be saved.
+    
+    
+    
+### Step 4: Decrypt the Message Using the Private Key 
 
-::: {#3881 .section .section .section--body .section--last}
-::: section-divider
-
-------------------------------------------------------------------------
-:::
-
-::: section-content
-::: {.section-inner .sectionLayout--insetColumn}
-### Step 4: Decrypt the Message Using the Private Key {#eb32 .graf .graf--h3 .graf--leading name="eb32"}
-
-1.  [**Decrypt the Encrypted Message**:]{#e417}
+1.  **Decrypt the Encrypted Message**:
 
 Use the private key to decrypt the message:
 
@@ -376,8 +363,8 @@ data-width="1698" data-height="432" />
 
 **2.View the Decrypted Message**:
 
--   [To check if decryption was successful, view the content of
-    `decrypted_message`{.markup--code .markup--li-code}]{#86ae}
+-   To check if decryption was successful, view the content of
+    `decrypted_message`{.markup--code .markup--li-code}
 
 *`cat decrypted_message.txt`{.markup--code .markup--p-code}*
 
@@ -388,17 +375,17 @@ class="graf-image" data-image-id="1*6ovuB22MEHrZfz001JnEFA.png"
 data-width="1678" data-height="343" />
 </figure>
 
--   [Ensure that you have generated the `private_key.pem`{.markup--code
+-   Ensure that you have generated the `private_key.pem`{.markup--code
     .markup--li-code} and `public_key.pem`{.markup--code
     .markup--li-code} files correctly and that they are accessible in
-    the current directory.]{#92fe}
--   [The data encrypted with RSA has limitations on size. For larger
+    the current directory.
+-   The data encrypted with RSA has limitations on size. For larger
     messages, consider using hybrid encryption (encrypting a message
-    with a symmetric key and then encrypting that key with RSA).]{#b633}
+    with a symmetric key and then encrypting that key with RSA).
 
-### Scenario: Secure Communication Between John and Jane {#0287 .graf .graf--h3 .graf-after--li name="0287"}
+### Scenario: Secure Communication Between John and Jane 
 
-#### Here's the revised scenario using John and Jane for secure communication: {#45da .graf .graf--h4 .graf-after--h3 name="45da"}
+#### Here's the revised scenario using John and Jane for secure communication: 
 
 Scenario: Secure Communication Between John and Jane
 
@@ -472,10 +459,7 @@ confidently exchange sensitive information, knowing that only the
 intended recipient can access the messages. This scenario highlights the
 importance of cryptographic techniques in securing communications in
 today's digital landscape.
-:::
-:::
-:::
-:::
+
 
 By [Kiplagatkelvin](https://medium.com/@kiplagatkelvin034){.p-author
 .h-card} on [October 29, 2024](https://medium.com/p/ea1d5f204206).

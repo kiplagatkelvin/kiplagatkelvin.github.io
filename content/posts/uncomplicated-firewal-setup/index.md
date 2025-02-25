@@ -20,7 +20,7 @@ class="graf-image" data-image-id="1*zP2yzRZmqi07lzIy32e9xQ.png"
 data-width="854" data-height="285" data-is-featured="true" />
 </figure>
 
-1.  [**Introduction**]
+1.  **Introduction**
 
 In today's world, securing your system and network from unauthorized
 access is critical, and firewalls play an essential role in that
@@ -133,8 +133,8 @@ class="graf-image" data-image-id="1*ukWpDJXGQC4mlsCJALOYKQ.png"
 data-width="1062" data-height="66" />
 </figure>
 
--   [Allow outgoing: Permits all outbound traffic so your system can
-    connect to external servers.]{#43c1}
+-   Allow outgoing: Permits all outbound traffic so your system can
+    connect to external servers.
 
 Step 2: Allow SSH Connections\
 If you are using SSH to remotely connect to your Kali Linux system, it's
@@ -205,8 +205,8 @@ Step 1: Allow Common Services\
 UFW makes it easy to allow common services like HTTP, HTTPS, and SSH
 with simple commands. Here's how to allow traffic for these services:
 
--   [Allow HTTP (Port 80):\
-    *sudo ufw allow http*]{#7889}
+-   Allow HTTP (Port 80):\
+    *sudo ufw allow http*
 
 <figure id="3307" class="graf graf--figure graf-after--li">
 <img
@@ -227,8 +227,8 @@ data-width="1069" data-height="136" />
 
 n/b(i had to reset my ufw to show case how i added port 80
 
--   [Allow HTTPS (Port 443)\
-    *sudo ufw allow https*]
+-   Allow HTTPS (Port 443)\
+    *sudo ufw allow https*
 
 <figure id="41a2" class="graf graf--figure graf-after--li">
 <img
@@ -237,10 +237,10 @@ class="graf-image" data-image-id="1*QkEo3iBtShi7wLDD_BRtng.png"
 data-width="1008" data-height="259" />
 </figure>
 
--   [Allow SSH (Port 22):\
+-   Allow SSH (Port 22):\
      If you haven't already allowed SSH in the previous step, you can do
     it here:\
-    *sudo ufw allow ssh*]{#d3ea}
+    *sudo ufw allow ssh*
 
 <figure id="ccb3" class="graf graf--figure graf-after--li">
 <img
@@ -254,8 +254,8 @@ For applications running on non-standard ports, you can specify custom
 ports. For example, if you have a web server running on port 8080, you
 can allow it as follows:
 
--   [Allow traffic on Port 8080:\
-     *sudo ufw allow 8080/tcp*]{#d3ad}
+-   Allow traffic on Port 8080:\
+     *sudo ufw allow 8080/tcp*
 
 <figure id="9df1" class="graf graf--figure graf-after--li">
 <img
@@ -268,8 +268,8 @@ Step 3: Denying Services\
 To block a specific service or port, you can use the \`deny\` option.
 For example, to block SSH access:
 
--   [Deny SSH:\
-    *sudo ufw deny SSH*]
+-   Deny SSH:\
+    *sudo ufw deny SSH*
 
 <figure id="4668" class="graf graf--figure graf-after--li">
 <img
@@ -297,8 +297,8 @@ Sometimes, you might want to allow a specific IP or range of IPs to
 access a service while blocking others. For example, to allow SSH from a
 specific IP address (ex\`192.168.1.100\`):
 
--   [Allow SSH from a Specific IP:\
-    *sudo ufw allow from 192.168.1.100 to any port 22*]{#ce16}
+-   Allow SSH from a Specific IP:\
+    *sudo ufw allow from 192.168.1.100 to any port 22*
 
 <figure id="0f84" class="graf graf--figure graf-after--li">
 <img
