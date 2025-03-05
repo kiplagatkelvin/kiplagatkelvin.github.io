@@ -11,7 +11,6 @@ draft: false
 
 
 # Securing a Virtual Machine with LUKS Encryption and Best Practices on VMware: A Step-by-Step Guide 
-### Securing a Virtual Machine with LUKS Encryption and Best Practices on VMware: A Step-by-Step Guide
 
 <figure id="f6b4" class="graf graf--figure graf-after--h3">
 <img
@@ -39,7 +38,7 @@ I will focus my attention on **Data Encryption**:
 -   Run: sudo cryptsetup luksFormat /dev/sda
 -   Enter a passphrase to encrypt the disk.
 
-**I understand that creating a new virtual machine in VMWARE can now be
+I understand that creating a new virtual machine in VMWARE can now be
 done by anybody in IT.**So I will not focus much of my attention to it.
 
 **Step 1: Create a New Virtual Machine in VMware**
