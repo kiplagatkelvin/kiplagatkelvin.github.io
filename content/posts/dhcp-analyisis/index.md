@@ -1,11 +1,13 @@
 ---
+
 title: "DHCP Log Analysis Using Splunk"
-date: 2025-03-17T12:00:00+03:00
+date: 2025-03-17
+draft: false
 author: "Kelvin Kiplagat"
 description: "A step-by-step guide on analyzing DHCP logs using Splunk, including identifying multiple IP leases per client."
 tags: ["Splunk", "DHCP Logs", "Log Analysis", "Cybersecurity"]
 categories: ["SIEM", "Threat Hunting"]
-draft: false
+
 ---
 
 
