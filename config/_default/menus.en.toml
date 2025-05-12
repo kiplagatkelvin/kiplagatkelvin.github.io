@@ -15,10 +15,10 @@
   pageRef = "posts"
   weight = 20
 
-[[main]]
-  name = "Portfolio"
-  url = "https://kiplagatkelvin.github.io/kel-portfolio/"
-  weight = 10
+#[[main]]
+#name = "Portfolio"
+ #url = "https://kiplagatkelvin.github.io/kel-portfolio/"
+ #weight = 10
   
 
 #[[main]]
@@ -54,10 +54,10 @@
   pageRef = "tags"
   weight = 40
 
-[[main]]
-  name = "Resource"
-  pageRef = "Resources"
-  weight = 50
+#[[main]]
+ # name = "Resource"
+ # pageRef = "Resources"
+  #weight = 50
 
 # -- Footer Menu --
 # The footer menu is displayed at the bottom of the page, just before
